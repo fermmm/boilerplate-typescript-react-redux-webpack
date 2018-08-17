@@ -23,7 +23,7 @@ class App extends React.Component<IProps, any> {
       <ConnectedRouter history={history}>
         <ErrorBoundary>
           <Switch>
-            <Route path={"/"} component={HelloWorld} />
+            <Route exact path={"/"} component={HelloWorld} />
           </Switch>
         </ErrorBoundary>
       </ConnectedRouter>

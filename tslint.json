@@ -16,6 +16,7 @@
     "jsx-no-string-ref": true,
     "jsx-self-close": true,
     "jsx-wrap-multiline": true,
+    "jsx-boolean-value": false,
 
     "no-shadow": ["error", { "builtinGlobals": false, "hoist": "never", "allow": [] }],
     "no-submodule-imports": false,
