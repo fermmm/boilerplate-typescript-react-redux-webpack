@@ -51,7 +51,7 @@ module.exports = {
 
             // COMPONENT SASS STYLES
             {
-                test: /\.scss$/,
+                test: /\.(s*)css$/,
                 loaders: [
                     "style-loader",
                     {
@@ -65,10 +65,34 @@ module.exports = {
                 ]
             },
 
-            // FONT LOADER
+            // OTHER FILES LOADER
             {
-                test: /\.(ttf|svg)$/,
-                loader: "file-loader",
+                test: /\.(png|jpg|gif|svg|ico)$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: './assets/images/',
+                    name: '[name].[ext]?[hash]'
+                }
+            },
+            {
+                test: /\.(eot|ttf|otf|woff|woff2|json|xml)$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: './fonts/',
+                    name: '[name].[ext]?[hash]'
+                }
+            },
+            {
+                test: /\.(json|xml)$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: './data/',
+                    name: '[name].[ext]?[hash]'
+                }
+            },
+            {
+                test: /\.(csv|tsv)$/,
+                use: [{ loader: 'csv-loader' }]
             },
         ]
     },
