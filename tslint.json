@@ -1,6 +1,29 @@
 {
   "extends": ["tslint:latest", "tslint-react"],
   "rules": {
+    "no-console": {
+        "severity": "warning",
+        "options": [
+            "debug",
+            "info",
+            "log",
+            "time",
+            "timeEnd",
+            "trace"
+        ]
+    },
+    "typedef": [
+        true,
+        "call-signature",
+        //"arrow-call-signature",
+        "parameter",
+        //"arrow-parameter",
+        "property-declaration",
+        "variable-declaration",
+        "member-variable-declaration",
+        "object-destructuring",
+        "array-destructuring"
+    ],
     "no-var-requires": false,
     "ordered-imports": false,
     "no-empty-interface": false,
