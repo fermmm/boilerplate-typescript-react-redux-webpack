@@ -5,7 +5,7 @@ const initial: IAppState = {
     appTitle: "App Title",
 };
 
-function AppReducer(state = initial, action: IReduxAction = {type: "", payload: null}) {
+function AppReducer(state: IAppState = initial, action: IReduxAction = {type: "", payload: null}): IAppState {
     switch (action.type) {
         default: {
             return state;

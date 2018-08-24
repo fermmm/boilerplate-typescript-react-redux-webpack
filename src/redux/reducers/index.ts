@@ -1,6 +1,8 @@
 import { AppReducer } from "./AppReducer";
+import { IAppState } from "./interfaces";
+import { IReduxAction } from "../interfaces";
 
-const rootReducer = {
+const rootReducer: {appState: (state?: IAppState, action?: IReduxAction) => IAppState} = {
     appState: AppReducer,
 };
 

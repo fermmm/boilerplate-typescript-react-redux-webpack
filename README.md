@@ -1,14 +1,13 @@
-# Project Title
+# Typescript, React and Redux template.
 
 ## Installation
 
-Just run `npm install` to install dependencies.
-
-Optional:
-    This project is compatible with "Redux DevTools" chrome extension.
+1) run `npm install` to install dependencies.
+2) Highly recomended: Install TSLint extension for VSCode or for your prefered text editor.
+3) Optional: This project is compatible with the chrome extension: "Redux DevTools", you can install it.
 
 ----
-#### HMR / Webserver
+#### To start coding and testing
 ```
 npm start
 ```

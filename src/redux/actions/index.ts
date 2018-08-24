@@ -1,1 +1,1 @@
-export const EXAMPLE_ACTION = "EXAMPLE_ACTION";
+export const EXAMPLE_ACTION: string = "EXAMPLE_ACTION";
