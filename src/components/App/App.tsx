@@ -1,6 +1,6 @@
 import * as React from "react";
 import { ConnectedRouter } from "react-router-redux";
-import { History} from "history";
+import { History } from "history";
 import { Route, Switch } from "react-router";
 import { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
 import { HelloWorld } from "../pages/HelloWorld/HelloWorld";
@@ -19,7 +19,7 @@ class App extends React.Component<IAppProps> {
     }
 
     public render(): JSX.Element {
-        const { history }: {history: History} = this.props;
+        const { history }: { history: History } = this.props;
         return (
             <ConnectedRouter history={history}>
                 <ErrorBoundary>

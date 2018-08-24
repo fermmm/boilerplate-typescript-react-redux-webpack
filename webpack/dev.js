@@ -13,7 +13,7 @@ module.exports = merge(baseConfig, {
         hot: true,
         port: devServerPort,
         contentBase: "../dist/",
-        
+
         // stats
         stats: {
             hash: false,

@@ -3,13 +3,13 @@ import createHistory from "history/createHashHistory";
 import { rootReducer } from "../reducers";
 import { History } from "history";
 import { routerMiddleware, routerReducer } from "react-router-redux";
-import { 
-    createStore, 
-    applyMiddleware, 
-    compose, 
-    combineReducers, 
-    StoreEnhancer, 
-    Middleware, 
+import {
+    createStore,
+    applyMiddleware,
+    compose,
+    combineReducers,
+    StoreEnhancer,
+    Middleware,
     Store,
     DeepPartial,
 } from "redux";
@@ -36,20 +36,20 @@ storeEnhancers.push(applyMiddleware(...middlewares));
 
 // add dev-tools storeEnhancer
 if (__DEV__) {
-  const debugEnhancer: StoreEnhancer =
-    (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
-  if (debugEnhancer) {
-    storeEnhancers.push(debugEnhancer);
-  }
+    const debugEnhancer: StoreEnhancer =
+        (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
+    if (debugEnhancer) {
+        storeEnhancers.push(debugEnhancer);
+    }
 }
 
-export default function configureStore(initialState: DeepPartial<any>): {store: Store, history: History} {
-  // base store configuration
-  const store: Store = createStore(
-    combineReducers({ ...rootReducer, router: routerReducer }),
-    initialState,
-    compose(...storeEnhancers),
-  );
+export default function configureStore(initialState: DeepPartial<any>): { store: Store, history: History } {
+    // base store configuration
+    const store: Store = createStore(
+        combineReducers({ ...rootReducer, router: routerReducer }),
+        initialState,
+        compose(...storeEnhancers),
+    );
 
-  return { store, history };
+    return { store, history };
 }

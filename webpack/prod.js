@@ -6,6 +6,6 @@ const CleanWebpackPlugin = require("clean-webpack-plugin");
 const distDir = path.resolve(__dirname, "../dist/");
 
 module.exports = merge(baseConfig, {
-	mode: "production",
-	plugins: [new CleanWebpackPlugin([distDir], { root: process.cwd() })]
+    mode: "production",
+    plugins: [new CleanWebpackPlugin([distDir], { root: process.cwd() })]
 });

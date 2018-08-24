@@ -1,3 +1,3 @@
 export interface IAppState {
-  appTitle: string;
+    appTitle: string;
 }
