@@ -1,19 +1,27 @@
 <!DOCTYPE html>
 <html>
 
-  <head>
+<head>
+    <!-- Compatibility meta tags -->
     <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+
     <title>Title</title>
 
     <!-- Share meta tags -->
-    <meta property="og:type"          content="website" />
-    <meta property="og:description"   content="Write here a site description" />
-    <meta name="description"          content="Write here a site description again">
-    <meta property="og:image"         content="http://website.com/share-image.png" />
-  </head>
+    <meta property="og:type" content="website" />
+    <meta property="og:description" content="Write here a site description" />
+    <meta name="description" content="Write here a site description again">
+    <meta property="og:image" content="http://website.com/share-image.png" />
+</head>
 
-  <body ondragstart="return false">     <!-- If you want to implement something with a dragging functionality remove ondragstart="return false -->
-  	<div id="root" />
-  </body>
+<!-- 
+    If you want to implement something with a dragging functionality remove 
+    on the following line: ondragstart="return false". Otherwise this 
+    provides a smoother experience when dragging with the mouse.
+-->
+<body ondragstart="return false">
+    <div id="root" />
+</body>
 
 </html>
