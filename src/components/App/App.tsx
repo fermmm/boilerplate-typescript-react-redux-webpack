@@ -3,7 +3,7 @@ import { ConnectedRouter } from "react-router-redux";
 import { History } from "history";
 import { Route, Switch } from "react-router";
 import { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
-import { HelloWorld } from "../pages/HelloWorld/HelloWorld";
+import HelloWorld from "../pages/HelloWorld/HelloWorld";
 
 const styles: any = require("./App.scss");
 
