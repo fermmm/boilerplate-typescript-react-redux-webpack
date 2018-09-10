@@ -1,11 +1,11 @@
-import * as React from "react";
+import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 const styles: any = require("./HelloWorld.scss"); 
 
 interface IProps { }
 interface IState { }
 
-class HelloWorld extends React.PureComponent<IProps, IState> {
+class HelloWorld extends Component<IProps, IState> {
     public render(): JSX.Element {
         return (
             <h1 className={styles.helloWorld}> 
