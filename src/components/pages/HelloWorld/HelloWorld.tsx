@@ -15,5 +15,5 @@ class HelloWorld extends React.PureComponent<IProps, IState> {
     }
 }
 
-// You can add connect function here to implement redux.
+// You can add the "connect" function here to implement redux.
 export default hot(module)(HelloWorld);
