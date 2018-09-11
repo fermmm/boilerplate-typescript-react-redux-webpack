@@ -14,8 +14,11 @@ export interface IAppProps {
 }
 
 class App extends React.Component<IAppProps> {
+    public static history: History;
+    
     public componentDidMount(): void {
         document.title = this.props.appTitle;
+        App.history = this.props.history;
     }
 
     public render(): JSX.Element {
