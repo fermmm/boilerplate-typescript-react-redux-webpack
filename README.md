@@ -1,9 +1,9 @@
-# Typescript, React and Redux template.
+# Starting template (voilerplate) for a project using Typescript, React and Redux.
 
 ## Installation
 
-1) run `npm install` to install dependencies.
-2) Highly recomended: Install TSLint extension for VSCode or for your prefered text editor.
+1) Run: `npm install`. On Windows you must also run: `npm install -g win-node-env`.
+2) Optional but highly recomended: Install TSLint extension for VSCode or for your prefered text editor.
 3) Optional: This project is compatible with the chrome extension: "Redux DevTools", you can install it too.
 
 ----

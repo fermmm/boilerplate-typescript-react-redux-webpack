@@ -24,6 +24,23 @@
         "object-destructuring",
         "array-destructuring"
     ],
+    "member-ordering": [
+        true,
+        {
+          "order": [
+            "public-static-field",
+            "private-static-field",
+            "public-instance-field",
+            "private-instance-field",
+            "public-constructor",
+            "private-constructor",
+            "public-instance-method",
+            "protected-instance-method",
+            "private-instance-method"
+          ]
+        }
+    ],
+    "max-line-length": [false],
     "no-var-requires": false,
     "ordered-imports": false,
     "no-empty-interface": false,

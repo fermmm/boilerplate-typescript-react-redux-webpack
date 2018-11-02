@@ -83,6 +83,14 @@ module.exports = {
                 }
             },
             {
+                test: /\.(mp3|mp4|flac|ogg)$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: './audio/',
+                    name: '[name].[ext]?[hash]'
+                }
+            },
+            {
                 test: /\.(json|xml)$/,
                 loader: 'file-loader',
                 query: {
@@ -105,7 +113,8 @@ module.exports = {
         new webpack.DefinePlugin({
             __DEV__: process.env.NODE_ENV === "development"
         }),
-        // Copy image files to the build folder.
+        // Copy into the build folder all the media files and other files that are not imported anywhere, all files 
+        // should be avaiable in the build.
         new CopyWebpackPlugin(
             [
                 { from: './src/assets', to: '../' + "dist/assets", ignore: ['*.ts', '*.tsx', '*.html', '*.scss', '*.css'] }

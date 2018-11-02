@@ -1,6 +1,7 @@
 import * as React from "react";
 
-const styles: any = require("./ErrorBoundary.scss");
+// @ts-ignore
+import styles from "./ErrorBoundary.scss";
 
 interface IState {
     error: Error;

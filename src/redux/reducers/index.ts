@@ -1,9 +1,26 @@
-import { AppReducer } from "./AppReducer";
-import { IAppState } from "./interfaces";
-import { IReduxAction } from "../interfaces";
+import { IHelloProps } from "./../../components/pages/HelloWorld/HelloWorld";
+import { IAppProps } from "./../../components/App/App";
+import { appReducer } from "./app/appReducer";
+import { helloWorldReducer } from "./helloWorld/helloWorldReducer";
 
-const rootReducer: { appState: (state?: IAppState, action?: IReduxAction) => IAppState } = {
-    appState: AppReducer,
+export interface IRootReducer {
+    appState: (state?: IAppProps, action?: IReduxAction) => IAppProps;
+    helloWorldState: (state?: IHelloProps, action?: IReduxAction) => IHelloProps;
+}
+
+export interface IStore {
+    appState: IAppProps;
+    helloWorldState: IHelloProps;
+}
+
+const rootReducer: IRootReducer = {
+    appState: appReducer,
+    helloWorldState: helloWorldReducer,
 };
+
+export interface IReduxAction {
+    type: string;
+    payload: any;
+}
 
 export { rootReducer };

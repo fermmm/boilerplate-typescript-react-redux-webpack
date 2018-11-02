@@ -1,28 +1,35 @@
 import * as React from "react";
-import { ConnectedRouter } from "react-router-redux";
+import { hot } from "react-hot-loader";
 import { History } from "history";
 import { Route, Switch } from "react-router";
+import { ConnectedRouter } from "react-router-redux";
+import { connect } from "react-redux";
+import { Dispatch } from "redux";
+import { IStore } from "../../redux/reducers";
+import { CHANGE_APP_SETTINGS } from "../../redux/actions";
 import { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
 import HelloWorld from "../pages/HelloWorld/HelloWorld";
 
-const styles: any = require("./App.scss");
-
 export interface IAppProps {
-    history: History;
-    // container props
+    history?: History;
     appTitle?: string;
+    onNewAppProps?: (newProps: Partial<IAppProps>) => void;
 }
+
+export interface IAppState {}
 
 class App extends React.Component<IAppProps> {
     public static history: History;
     
     public componentDidMount(): void {
-        document.title = this.props.appTitle;
         App.history = this.props.history;
+        this.props.onNewAppProps({appTitle: "App Title"});
     }
 
     public render(): JSX.Element {
-        const { history }: { history: History } = this.props;
+        const { history }: Partial<IAppProps> = this.props;
+
+        document.title = this.props.appTitle;
         return (
             <ConnectedRouter history={history}>
                 <ErrorBoundary>
@@ -35,4 +42,12 @@ class App extends React.Component<IAppProps> {
     }
 }
 
-export default App;
+function mapStateToProps(state: IStore): Partial<IAppProps> {
+    return {...state.appState};
+}
+function mapDispatchToProps(dispatch: Dispatch): Partial<IAppProps> {
+    return {
+        onNewAppProps: (newProps: Partial<IAppProps>) => dispatch({type: CHANGE_APP_SETTINGS, payload: newProps}),
+    };
+}
+export default connect<{}, {}, IAppProps>(mapStateToProps, mapDispatchToProps)(hot(module)(App));
