@@ -70,8 +70,8 @@ module.exports = {
                 test: /\.(png|jpg|gif|svg|ico)$/,
                 loader: 'file-loader',
                 query: {
-                    outputPath: './assets/images/',
-                    name: '[name].[ext]?[hash]'
+                    outputPath: './images/',
+                    name: '[path][name].[ext]?[hash]'
                 }
             },
             {
@@ -79,15 +79,7 @@ module.exports = {
                 loader: 'file-loader',
                 query: {
                     outputPath: './fonts/',
-                    name: '[name].[ext]?[hash]'
-                }
-            },
-            {
-                test: /\.(mp3|mp4|flac|ogg)$/,
-                loader: 'file-loader',
-                query: {
-                    outputPath: './audio/',
-                    name: '[name].[ext]?[hash]'
+                    name: '[path][name].[ext]?[hash]'
                 }
             },
             {
@@ -95,7 +87,15 @@ module.exports = {
                 loader: 'file-loader',
                 query: {
                     outputPath: './data/',
-                    name: '[name].[ext]?[hash]'
+                    name: '[path][name].[ext]?[hash]'
+                }
+            },
+            {
+                test: /\.(mp3|mp4|flac|ogg)$/,
+                loader: 'file-loader',
+                query: {
+                    outputPath: './audio/',
+                    name: '[path][name].[ext]?[hash]'
                 }
             },
             {
