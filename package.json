@@ -10,9 +10,10 @@
   "dependencies": {
     "react": "^16.4.1",
     "react-dom": "^16.4.1",
+    "react-hot-loader": "^4.3.3",
     "react-redux": "^5.0.7",
     "react-router-redux": "^5.0.0-alpha.9",
-    "react-hot-loader": "^4.3.3"
+    "dotenv-webpack": "^1.5.7"
   },
   "devDependencies": {
     "@types/react": "^16.4.13",

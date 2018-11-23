@@ -2,6 +2,7 @@ const webpack = require("webpack");
 const path = require("path");
 const HtmlWebpackPlugin = require("html-webpack-plugin");
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const Dotenv = require('dotenv-webpack');
 
 const publicDir = path.resolve(__dirname, "../dist/");
 const srcDir = path.resolve(__dirname, "../src/");
@@ -120,6 +121,7 @@ module.exports = {
                 { from: './src/assets', to: '../' + "dist/assets", ignore: ['*.ts', '*.tsx', '*.html', '*.scss', '*.css'] }
             ]
         ),
+        new Dotenv(),
     ],
 
     // stats
