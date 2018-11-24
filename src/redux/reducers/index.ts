@@ -4,8 +4,8 @@ import { appReducer } from "./app/appReducer";
 import { helloWorldReducer } from "./helloWorld/helloWorldReducer";
 
 export interface IRootReducer {
-    appState: (state?: IAppProps, action?: IReduxAction) => IAppProps;
-    helloWorldState: (state?: IHelloProps, action?: IReduxAction) => IHelloProps;
+    appState: (state?: IAppProps, action?: IReduxAction<IAppProps>) => IAppProps;
+    helloWorldState: (state?: IHelloProps, action?: IReduxAction<string | number>) => IHelloProps;
 }
 
 export interface IStore {
@@ -18,9 +18,11 @@ const rootReducer: IRootReducer = {
     helloWorldState: helloWorldReducer,
 };
 
-export interface IReduxAction {
+export interface IReduxAction<T> {
     type: string;
-    payload: any;
+    payload: T;
 }
+
+export type DispatchFunction<T> = (v: IReduxAction<Partial<T>>) => void;
 
 export { rootReducer };

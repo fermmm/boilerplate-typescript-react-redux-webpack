@@ -4,8 +4,7 @@ import { History } from "history";
 import { Route, Switch } from "react-router";
 import { ConnectedRouter } from "react-router-redux";
 import { connect } from "react-redux";
-import { Dispatch } from "redux";
-import { IStore } from "../../redux/reducers";
+import { IStore, DispatchFunction } from "../../redux/reducers";
 import { CHANGE_APP_SETTINGS } from "../../redux/actions";
 import { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
 import HelloWorld from "../pages/HelloWorld/HelloWorld";
@@ -45,7 +44,7 @@ class App extends React.Component<IAppProps> {
 function mapStateToProps(state: IStore): Partial<IAppProps> {
     return {...state.appState};
 }
-function mapDispatchToProps(dispatch: Dispatch): Partial<IAppProps> {
+function mapDispatchToProps(dispatch: DispatchFunction<IAppProps>): Partial<IAppProps> {
     return {
         onNewAppProps: (newProps: Partial<IAppProps>) => dispatch({type: CHANGE_APP_SETTINGS, payload: newProps}),
     };
