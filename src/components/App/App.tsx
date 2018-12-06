@@ -41,6 +41,11 @@ class App extends React.Component<IAppProps> {
     }
 }
 
+/**
+ * 
+ * Redux connectors.
+ * 
+ */
 function mapStateToProps(state: IStore): Partial<IAppProps> {
     return {...state.appState};
 }
