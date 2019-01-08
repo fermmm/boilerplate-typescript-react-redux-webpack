@@ -121,6 +121,7 @@ module.exports = {
                 { from: './src/assets', to: '../' + "dist/assets", ignore: ['*.ts', '*.tsx', '*.html', '*.scss', '*.css'] }
             ]
         ),
+        // With this plugin you can add environment variables to the .env file and call them like this: process.env.MY_VARIABLE
         new Dotenv(),
     ],
 
