@@ -10,9 +10,10 @@ module.exports = merge(baseConfig, {
     // source-map configuration
     devtool: "source-map",
     devServer: {
-        hot: true,
-        port: devServerPort,
         contentBase: "../dist/",
+        port: devServerPort,
+        host: '0.0.0.0',
+        hot: true,
 
         // stats
         stats: {
