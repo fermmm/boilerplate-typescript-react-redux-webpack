@@ -1,24 +1,16 @@
 import React, { Component } from "react";
 import { hot } from "react-hot-loader";
 import { connect } from "react-redux";
-import { RouteComponentProps, withRouter } from "react-router";
 import { IStore, DispatchFunction } from "../../../redux/reducers";
 import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from "../../../redux/actions";
 
 // @ts-ignore
 import styles from "./HelloWorld.scss";
 
-/*
-    This page example shows how to add react-router and redux to a component with typescript, if you 
-    don't need it in your component you can remove all and create a more simple starting component.
-    
-    You can also access the history object with a static constant like this (change page example):
+/*    
+    You can access the history object with a static constant like this (change page example):
         App.history.push("/targetPage");
-
-    So you don't need the RouteComponentProps<any> in the class declaration if you are only using 
-    the history property.
 */
-
 export interface IHelloProps { 
     reduxTextLine: string;
     reduxNumber: number;
@@ -27,7 +19,7 @@ export interface IHelloProps {
 }
 export interface IHelloState { }
 
-class HelloWorld extends Component<IHelloProps & RouteComponentProps<any>, IHelloState> {
+class HelloWorld extends Component<IHelloProps, IHelloState> {
     public componentDidMount(): void {
 
         // Send stuff to redux so we can test that redux is working:
@@ -49,7 +41,7 @@ class HelloWorld extends Component<IHelloProps & RouteComponentProps<any>, IHell
 
 /**
  * 
- * Redux connectors.
+ * REDUX CONNECTORS. (Remove when redux is not needed)
  * 
  */
 function mapStateToProps(state: IStore): Partial<IHelloProps> {
@@ -66,4 +58,4 @@ function mapDispatchToProps(dispatch: DispatchFunction<string | number>): Partia
     };
 }
 
-export default connect<{}, {}, IHelloProps>(mapStateToProps, mapDispatchToProps)(hot(module)(withRouter(HelloWorld)));
+export default connect<{}, {}, IHelloProps>(mapStateToProps, mapDispatchToProps)(hot(module)(HelloWorld));

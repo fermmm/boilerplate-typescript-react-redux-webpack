@@ -43,7 +43,7 @@ class App extends React.Component<IAppProps> {
 
 /**
  * 
- * Redux connectors.
+ * REDUX CONNECTORS. (Remove when redux is not needed)
  * 
  */
 function mapStateToProps(state: IStore): Partial<IAppProps> {
