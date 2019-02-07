@@ -13,7 +13,7 @@ Comes with:
 - **Webpack**
 ## Installation
 
-1. Run: `npm install`. On Windows you must also run: `npm install -g win-node-env`.
+1. Run: `npm install`. On Windows you must also run: `npm install -g win-node-env`. That is all.
 2. **Optional** but highly recomended: Install TSLint extension for VSCode or for your prefered text editor. Also configure your editor to fix automatically tslint issues on save, to improve productivity.
 3. **Optional**: This project is compatible with the chrome extension: "Redux DevTools", you can install it too.
 
