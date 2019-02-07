@@ -62,7 +62,8 @@
     "max-classes-per-file": false,
     "no-shadow": ["error", { "builtinGlobals": false, "hoist": "never", "allow": [] }],
     "no-submodule-imports": false,
-    "no-implicit-dependencies": false
+    "no-implicit-dependencies": false,
+    "prefer-conditional-expression": false
   },
   "jsRules": {},
   "rulesDirectory": "./tslint/custom-rules/"
