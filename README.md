@@ -14,8 +14,8 @@ Comes with:
 ## Installation
 
 1. Run: `npm install`. On Windows you must also run: `npm install -g win-node-env`.
-2. Optional but highly recomended: Install TSLint extension for VSCode or for your prefered text editor.
-3. Optional: This project is compatible with the chrome extension: "Redux DevTools", you can install it too.
+2. **Optional** but highly recomended: Install TSLint extension for VSCode or for your prefered text editor. Also configure your editor to fix automatically tslint issues on save, to improve productivity.
+3. **Optional**: This project is compatible with the chrome extension: "Redux DevTools", you can install it too.
 
 ----
 
