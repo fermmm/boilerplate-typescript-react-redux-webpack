@@ -16,4 +16,4 @@ npm start
 ```
 npm run build
 ```
-That creates a folder named "dist" with the final site ready to be uploaded to the server.
+That creates a folder named "dist" with the final site ready to be published.
