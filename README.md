@@ -1,11 +1,11 @@
-# Starting template (voilerplate) for a front end Typescript + react project. 
+# Starting template (voilerplate) for a front end Typescript + React project. 
 
 Comes with:
  - **Typescript**
 - **React**
 - **Redux**
 - **React-Router**
-- **TSLint custom coded rules that bans: "any", "object" and all practices to avoid typing**
+- **TSLint custom coded rules that bans: "any", "object" and other practices to avoid typing**
 - **TSLint errors are also displayed in the console as compile errors**
 - **CSS Modules**
 - **SASS**
@@ -23,7 +23,6 @@ Comes with:
 
 ```
 npm start
-
 ```
 
 ----
