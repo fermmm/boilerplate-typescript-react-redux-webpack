@@ -6,7 +6,7 @@ Comes with:
 - **Redux**
 - **React-Router**
 - **TSLint custom coded rules that bans: "any", "object" and other practices to avoid typing**
-- **TSLint errors are also displayed in the console as compile errors**
+- **TSLint errors are also displayed in the browser console as compile warnings**
 - **CSS Modules**
 - **SASS**
 - **Environment variables**
