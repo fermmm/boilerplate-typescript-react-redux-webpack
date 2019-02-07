@@ -1,4 +1,4 @@
-# Starting template (voilerplate) for a project using Typescript, React, Redux, React-Router, CSS Modules, SASS, Webpack and a friendly TSLint configuration.
+# Starting template (voilerplate) for a project using Typescript, React, Redux, React-Router, CSS Modules, SASS, Webpack and TSLint custom rules that bans: "any", "object" and all practices against typing.
 
 ## Installation
 
