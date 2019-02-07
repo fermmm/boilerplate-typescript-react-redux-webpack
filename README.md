@@ -5,7 +5,7 @@ Comes with:
 - **React**
 - **Redux**
 - **React-Router**
-- **TSLint rules coded by me and a configuration that bans: "object", "any" and other practices lazy js devs use when they don't fully understand the benefits of a typed language**
+- **TSLint rules coded by me and a configuration that bans: "object", "any" and other practices that lazy js devs use when they don't fully understand the benefits of a typed language**
 - **TSLint errors are also displayed in the browser console as warnings to give them more visibility**
 - **CSS Modules**
 - **SASS**
