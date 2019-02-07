@@ -5,7 +5,7 @@ Comes with:
 - **React**
 - **Redux**
 - **React-Router**
-- **TSLint custom coded rules that bans: "any", "object" and other practices to avoid typing**
+- **TSLint rules coded by me that bans: "object", "any" and other practices that people use to avoid typing**
 - **TSLint errors are also displayed in the browser console as warnings**
 - **CSS Modules**
 - **SASS**
