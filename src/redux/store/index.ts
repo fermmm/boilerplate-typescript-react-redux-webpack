@@ -12,7 +12,15 @@ import {
     Middleware,
     Store,
     DeepPartial,
+    StoreEnhancerStoreCreator,
 } from "redux";
+
+declare global {
+    // tslint:disable-next-line:interface-name
+    interface Window { 
+        __REDUX_DEVTOOLS_EXTENSION__: StoreEnhancer;
+    }
+}
 
 // WEBPACK ENVIRONMENT VARIABLE
 declare const __DEV__: boolean;
@@ -21,7 +29,7 @@ declare const __DEV__: boolean;
 const history: History = createHistory();
 
 // STORE CONFIGURATIONS
-const storeEnhancers: StoreEnhancer[] = [];
+const storeEnhancers: Array<StoreEnhancer | StoreEnhancerStoreCreator> = [];
 const middlewares: Middleware[] = [];
 
 // Add router middleware to sync redux with the routing history
@@ -31,20 +39,20 @@ middlewares.push(routerMiddleware(history));
 // middlewares.push(promiseMiddleware);
 // middlewares.push(authMiddleware);
 
-// apply middlewares
+// Apply middlewares
 storeEnhancers.push(applyMiddleware(...middlewares));
 
-// add dev-tools storeEnhancer
+// Add dev-tools storeEnhancer
 if (__DEV__) {
-    const debugEnhancer: StoreEnhancer =
-        (window as any).__REDUX_DEVTOOLS_EXTENSION__ && (window as any).__REDUX_DEVTOOLS_EXTENSION__();
+    const debugEnhancer: StoreEnhancer | StoreEnhancerStoreCreator =
+        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(undefined);
     if (debugEnhancer) {
         storeEnhancers.push(debugEnhancer);
     }
 }
 
-export default function configureStore(initialState: DeepPartial<any>): { store: Store, history: History } {
-    // base store configuration
+export default function configureStore(initialState: DeepPartial<{}>): { store: Store, history: History } {
+    // Base store configuration
     const store: Store = createStore(
         combineReducers({ ...rootReducer, router: routerReducer }),
         initialState,
