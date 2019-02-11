@@ -24,7 +24,7 @@ class HelloWorld extends Component<IHelloProps, IHelloState> {
 
         // Send stuff to redux so we can test that redux is working:
         this.props.onNewReduxText("And this second text line was stored and retreived from redux.");
-        this.props.onNewReduxNumber(665);
+        this.props.onNewReduxNumber(555);
     }
 
     public render(): JSX.Element {

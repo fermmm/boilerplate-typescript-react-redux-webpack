@@ -49,6 +49,7 @@ class App extends React.Component<IAppProps> {
 function mapStateToProps(state: IStore): Partial<IAppProps> {
     return {...state.appState};
 }
+
 function mapDispatchToProps(dispatch: DispatchFunction<IAppProps>): Partial<IAppProps> {
     return {
         onNewAppProps: (newProps: Partial<IAppProps>) => dispatch({type: CHANGE_APP_SETTINGS, payload: newProps}),
