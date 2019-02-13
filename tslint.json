@@ -63,7 +63,8 @@
     "no-shadow": ["error", { "builtinGlobals": false, "hoist": "never", "allow": [] }],
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
-    "prefer-conditional-expression": false
+    "prefer-conditional-expression": false,
+    "object-literal-key-quotes": false
   },
   "jsRules": {},
   "rulesDirectory": "./tslint/custom-rules/"
