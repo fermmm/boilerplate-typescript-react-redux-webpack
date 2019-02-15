@@ -7,7 +7,8 @@ import { connect } from "react-redux";
 import { IStore, DispatchFunction } from "../../redux/reducers";
 import { CHANGE_APP_SETTINGS } from "../../redux/actions";
 import { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
-import HelloWorld from "../pages/HelloWorld/HelloWorld";
+import CompleteComponent from "../pages/CompleteComponent/CompleteComponent";
+import SimpleComponent from "../pages/SimpleComponent/SimpleComponent";
 
 export interface IAppProps {
     history?: History;
@@ -33,7 +34,8 @@ class App extends React.Component<IAppProps> {
             <ConnectedRouter history={history}>
                 <ErrorBoundary>
                     <Switch>
-                        <Route exact path={"/"} component={HelloWorld} />
+                        <Route exact path={"/"} component={CompleteComponent} />
+                        <Route exact path={"/simple"} component={SimpleComponent} />
                     </Switch>
                 </ErrorBoundary>
             </ConnectedRouter>

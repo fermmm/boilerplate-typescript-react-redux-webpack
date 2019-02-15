@@ -1,21 +1,21 @@
-import { IHelloProps } from "./../../components/pages/HelloWorld/HelloWorld";
 import { IAppProps } from "./../../components/App/App";
 import { appReducer } from "./app/appReducer";
-import { helloWorldReducer } from "./helloWorld/helloWorldReducer";
+import { completeComponentReducer } from "./completeComponent/completeComponentReducer";
+import { ICompleteComponentProps } from "../../components/pages/CompleteComponent/CompleteComponent";
 
 export interface IRootReducer {
     appState: (state?: IAppProps, action?: IReduxAction<IAppProps>) => IAppProps;
-    helloWorldState: (state?: IHelloProps, action?: IReduxAction<string | number>) => IHelloProps;
+    completeComponentState: (state?: ICompleteComponentProps, action?: IReduxAction<string | number>) => ICompleteComponentProps;
 }
 
 export interface IStore {
     appState: IAppProps;
-    helloWorldState: IHelloProps;
+    completeComponentState: ICompleteComponentProps;
 }
 
 const rootReducer: IRootReducer = {
     appState: appReducer,
-    helloWorldState: helloWorldReducer,
+    completeComponentState: completeComponentReducer,
 };
 
 export interface IReduxAction<T> {
