@@ -1,7 +1,9 @@
 # Starting template (voilerplate) for a front end Typescript + React project. 
 
-Comes with:
- - **Typescript**
+This boilerplate comes from an ejected create-react-app with more things added and improved. It's a fork improved from btmnk/react-skeleton
+
+Includes:
+- **Typescript**
 - **React**
 - **Redux**
 - **React-Router**
@@ -11,6 +13,9 @@ Comes with:
 - **SASS**
 - **Environment variables**
 - **Webpack**
+- **HMR**
+- **Routing**
+
 ## Installation
 
 1. Run: `npm install`. On Windows you must also run: `npm install -g win-node-env`. That is all.

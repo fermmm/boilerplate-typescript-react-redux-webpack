@@ -14,5 +14,5 @@ a:hover, a:visited, a:link, a:active {
 }
 
 *, :after, :before {
-    box-sizing: border-box;  /* Sizes does not include border and margin */
+    box-sizing: border-box;  /* Do not include border and margin in the sizes numbers */
 }
