@@ -9,11 +9,10 @@ import "./global-styles/index.scss";
 
 const { store, history }: IStoreAndHistory = configureStore({});
 
-const root: HTMLElement = document.getElementById("root");
 const RootComponent: JSX.Element = (
     <Provider store={store}>
         <App history={history} />
     </Provider>
 );
 
-ReactDOM.render(RootComponent, root);
+ReactDOM.render(RootComponent, document.getElementById("root"));
