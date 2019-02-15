@@ -10,9 +10,9 @@ a:hover, a:visited, a:link, a:active {
 }
 
 *:focus {
-    outline: none;          /* Removes the selection outline from inputs and buttons*/
+    outline: none;           /* Removes the selection outline from inputs and buttons */
 }
 
 *, :after, :before {
-    box-sizing: border-box;
+    box-sizing: border-box;  /* Sizes does not include border and margin */
 }

@@ -4,11 +4,9 @@ import { Provider } from "react-redux";
 import configureStore, { IStoreAndHistory } from "./redux/store";
 import App from "./components/App/App";
 
-// GLOBAL STYLES
 // @ts-ignore
-import "./assets/global-styles/styles.scss";
+import "./global-styles/index.scss";
 
-// REDUX STORE
 const { store, history }: IStoreAndHistory = configureStore({});
 
 const root: HTMLElement = document.getElementById("root");
