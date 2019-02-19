@@ -3,6 +3,11 @@ import { appReducer } from "./app/appReducer";
 import { completeComponentReducer } from "./completeComponent/completeComponentReducer";
 import { ICompleteComponentProps } from "../../components/pages/CompleteComponent/CompleteComponent";
 
+const rootReducer: IRootReducer = {
+    appState: appReducer,
+    completeComponentState: completeComponentReducer,
+};
+
 export interface IRootReducer {
     appState: (state?: IAppProps, action?: IReduxAction<IAppProps>) => IAppProps;
     completeComponentState: (state?: ICompleteComponentProps, action?: IReduxAction<string | number>) => ICompleteComponentProps;
@@ -12,11 +17,6 @@ export interface IStore {
     appState: IAppProps;
     completeComponentState: ICompleteComponentProps;
 }
-
-const rootReducer: IRootReducer = {
-    appState: appReducer,
-    completeComponentState: completeComponentReducer,
-};
 
 export interface IReduxAction<T> {
     type: string;
