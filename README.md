@@ -12,7 +12,7 @@ Includes:
 - **Webpack** 
 - **CSS Modules**
 - **SASS**
-- **PostCSS with some basic plugins to compile your css/sass code into a more cross browser css**
+- **PostCSS with some basic plugins that changes automatically your css/sass code into a more cross browser css**
 - **Polyfills pack to make the code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
 - **Environment variables (.env) webpack plugin**
 - **HMR**
