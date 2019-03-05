@@ -13,7 +13,7 @@ Includes:
 - **CSS Modules**
 - **SASS**
 - **PostCSS with some basic plugins that changes automatically your css/sass code into a more cross browser css**
-- **Polyfills pack to make the code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
+- **Polyfills pack to make your code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
 - **Environment variables (.env) webpack plugin**
 - **HMR**
 - **React Router**
