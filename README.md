@@ -9,12 +9,14 @@ Includes:
 - **React-Router**
 - **TSLint rules coded by me and a configuration that bans: "object", "any" and other practices that js devs use when they don't fully understand what is the idea of using a typed language**
 - **TSLint errors are also displayed in the browser console as warnings to give them more visibility**
+- **Webpack** 
 - **CSS Modules**
 - **SASS**
-- **Environment variables**
-- **Webpack**
+- **PostCSS with some basic plugins to compile your css/sass code into a more cross browser css**
+- **Polyfills pack to make the code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
+- **Environment variables (.env) webpack plugin**
 - **HMR**
-- **Routing**
+- **React Router**
 
 ## Installation
 

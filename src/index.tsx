@@ -1,3 +1,4 @@
+// import "@babel/polyfill";    // Uncomment this line if you want to support Internet Explorer
 import * as React from "react";
 import * as ReactDOM from "react-dom";
 import { Provider } from "react-redux";

@@ -23,7 +23,7 @@ class App extends React.Component<IAppProps> {
     
     public componentDidMount(): void {
         App.history = this.props.history;
-        this.props.onNewAppProps({appTitle: "App Title"});
+        this.props.onNewAppProps({appTitle: "React app"});
     }
 
     public render(): JSX.Element {
@@ -35,7 +35,7 @@ class App extends React.Component<IAppProps> {
                 <ErrorBoundary>
                     <Switch>
                         <Route exact path={"/"} component={CompleteComponent} />
-                        <Route exact path={"/simple"} component={SimpleComponent} />
+                        <Route path={"/simple"} component={SimpleComponent} />
                     </Switch>
                 </ErrorBoundary>
             </ConnectedRouter>

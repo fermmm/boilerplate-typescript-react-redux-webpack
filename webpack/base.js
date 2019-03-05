@@ -10,36 +10,35 @@ const srcDir = path.resolve(__dirname, "../src/");
 const entryFile = srcDir + "/index.tsx";
 
 module.exports = {
-    // define where our source files come from and what the output looks like
+    // Where our source files come from and what the output looks like
     entry: entryFile,
     output: {
         filename: "bundle.[hash].js",
         path: publicDir
     },
 
-    // files that should be resolved by webpack
+    // Files that should be resolved by webpack
     resolve: {
         extensions: [".ts", ".tsx", ".js", ".json", ".jsx", ".scss"]
     },
 
-    // the loaders
+    // Loaders
     module: {
         rules: [
-            // LINTER
+            // "Linter in the console" loader
             {
                 test: /\.tsx?$/,
                 loader: "tslint-loader",
                 enforce: "pre"
             },
 
-            // REACT TYPESCRIPT COMPONENTS
+            // TypeScript and tsx loader
             {
                 test: /\.tsx?$/,
                 loaders: [
                     {
                         loader: "babel-loader",
                         options: {
-                            presets: ["env", "react"],
                             plugins: ["react-hot-loader/babel"]
                         }
                     },
@@ -50,7 +49,7 @@ module.exports = {
                 exclude: /node_modules/
             },
 
-            // COMPONENT SASS STYLES
+            // Markup loader
             {
                 test: /\.(s*)css$/,
                 loaders: [
@@ -61,11 +60,12 @@ module.exports = {
                             localIdentName: '[local]__[hash:base64:5]'
                         }
                     },
+                    "postcss-loader",
                     "sass-loader"
                 ]
             },
 
-            // OTHER FILES LOADER
+            // Other files loaders
             {
                 test: /\.(png|jpg|gif|svg|ico)$/,
                 loader: 'file-loader',
@@ -105,7 +105,7 @@ module.exports = {
         ]
     },
 
-    // plugins
+    // Plugins
     plugins: [
         new HtmlWebpackPlugin({ template: "./src/index.html" }),
         new webpack.HotModuleReplacementPlugin(),
