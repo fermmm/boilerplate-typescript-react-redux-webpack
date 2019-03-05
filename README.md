@@ -8,7 +8,7 @@ Includes:
 - **Redux**
 - **React-Router**
 - **TSLint rules coded by me and a configuration that bans: "object", "any" and other practices that js devs use when they don't fully understand what is the idea of using a typed language**
-- **TSLint errors are also displayed in the browser console as warnings to give them more visibility**
+- **TSLint errors are also displayed in the browser's console as warnings to give them more visibility**
 - **Webpack** 
 - **CSS Modules**
 - **SASS**
