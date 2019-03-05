@@ -16,7 +16,6 @@ Includes:
 - **Polyfills pack to make your code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
 - **Environment variables (.env) webpack plugin**
 - **HMR**
-- **React Router**
 
 ## Installation
 
