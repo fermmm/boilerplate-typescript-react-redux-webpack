@@ -1,6 +1,6 @@
 # Starting template (voilerplate) for a front end Typescript + React project. 
 
-This boilerplate comes from an ejected create-react-app with more things added and improved based on the experience of the devs that used it and shared their opinions with me. It's also a fork improved from btmnk/react-skeleton.
+This boilerplate comes from an ejected create-react-app with more things added and improved based on the experience of the devs that used it and shared their opinions with me. It's also a fork of btmnk/react-skeleton.
 
 Includes:
 - **Typescript**
@@ -8,15 +8,14 @@ Includes:
 - **Redux**
 - **React-Router**
 - **TSLint rules coded by me and a configuration that bans: "object", "any" and other practices that js devs use when they don't fully understand what is the idea of using a typed language**
-- **TSLint errors are also displayed in the browser console as warnings to give them more visibility**
+- **TSLint errors are also displayed in the browser's console as warnings to give them more visibility**
 - **Webpack** 
 - **CSS Modules**
 - **SASS**
-- **PostCSS with some basic plugins to compile your css/sass code into a more cross browser css**
-- **Polyfills pack to make the code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
+- **PostCSS with some basic plugins that changes automatically your css/sass code into a more cross browser css**
+- **Polyfills pack to make your code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts**
 - **Environment variables (.env) webpack plugin**
 - **HMR**
-- **React Router**
 
 ## Installation
 
