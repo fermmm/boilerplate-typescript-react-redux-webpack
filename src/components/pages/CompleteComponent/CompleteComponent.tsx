@@ -25,7 +25,7 @@ class CompleteComponent extends Component<ICompleteComponentProps & RouteCompone
 
     public render(): JSX.Element {
         return (
-            <div className={styles.mainContainer}>
+            <div className={styles.completeComponent}>
                 {/* Show the redux data. */} 
                 It's working. <br />
                 {this.props.reduxTextLine} <br />

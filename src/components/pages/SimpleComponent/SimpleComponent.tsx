@@ -10,7 +10,7 @@ export interface ISimpleComponentState { }
 class SimpleComponent extends Component<ISimpleComponentProps, ISimpleComponentState> {
     public render(): JSX.Element {
         return (
-            <div className={styles.mainContainer}>
+            <div className={styles.simpleComponent}>
                 Example of a simple component. No Redux, no router props.
             </div>
         );
