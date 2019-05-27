@@ -1,6 +1,6 @@
 const merge = require('webpack-merge');
 const baseConfig = require('./base.js');
-const OpenBrowserPlugin = require('open-browser-webpack-plugin');
+const OpnWebpackPlugin = require('opn-webpack-plugin');
 
 const devServerPort = 3000;
 
@@ -26,6 +26,6 @@ module.exports = merge(baseConfig, {
         }
     },
     plugins: [
-        new OpenBrowserPlugin({ url: 'http://localhost:' + devServerPort })
+        new OpnWebpackPlugin({target: 'http://localhost:' + devServerPort, options: {}})
     ]
 });
