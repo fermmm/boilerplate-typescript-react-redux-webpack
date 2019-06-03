@@ -64,7 +64,8 @@
     "no-submodule-imports": false,
     "no-implicit-dependencies": false,
     "prefer-conditional-expression": false,
-    "object-literal-key-quotes": false
+    "object-literal-key-quotes": false,
+    "member-access": false
   },
   "jsRules": {},
   "rulesDirectory": "./tslint/custom-rules/"
