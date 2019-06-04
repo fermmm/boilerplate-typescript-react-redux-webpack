@@ -65,7 +65,8 @@
     "no-implicit-dependencies": false,
     "prefer-conditional-expression": false,
     "object-literal-key-quotes": false,
-    "member-access": false
+    "member-access": false,
+    "arrow-parens": false
   },
   "jsRules": {},
   "rulesDirectory": "./tslint/custom-rules/"
