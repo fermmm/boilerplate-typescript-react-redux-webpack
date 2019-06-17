@@ -66,7 +66,8 @@
     "prefer-conditional-expression": false,
     "object-literal-key-quotes": false,
     "member-access": false,
-    "arrow-parens": false
+    "arrow-parens": false,
+    "no-unused-expression": false
   },
   "jsRules": {},
   "rulesDirectory": "./tslint/custom-rules/"
