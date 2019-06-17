@@ -8,6 +8,10 @@ export interface ISimpleComponentProps { }
 export interface ISimpleComponentState { }
 
 class SimpleComponent extends Component<ISimpleComponentProps, ISimpleComponentState> {
+    static defaultProps: Partial<ISimpleComponentProps> = {
+        
+    };
+    
     public render(): JSX.Element {
         return (
             <div className={styles.simpleComponent}>

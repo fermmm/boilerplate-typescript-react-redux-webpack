@@ -8,7 +8,7 @@ import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from "../../../redux/actions";
 // @ts-ignore
 import styles from "./CompleteComponent.scss";
 
-export interface ICompleteComponentProps { 
+export interface ICompleteComponentProps extends Partial<RouteComponentProps<{}>> { 
     reduxTextLine: string;
     reduxNumber: number;
     onNewReduxText?(text: string): void;
@@ -17,6 +17,10 @@ export interface ICompleteComponentProps {
 export interface ICompleteComponentState { }
 
 class CompleteComponent extends Component<ICompleteComponentProps & RouteComponentProps<{}>, ICompleteComponentState> {
+    static defaultProps: Partial<ICompleteComponentProps> = {
+        
+    };
+
     public componentDidMount(): void {
         // Send stuff to redux only show that redux is working:
         this.props.onNewReduxText("And this second text line was stored and retreived from redux.");
