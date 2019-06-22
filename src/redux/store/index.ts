@@ -1,8 +1,8 @@
 
-import createHistory from "history/createHashHistory";
-import { rootReducer } from "../reducers";
-import { History } from "history";
-import { routerMiddleware, routerReducer } from "react-router-redux";
+import createHistory from 'history/createHashHistory';
+import { rootReducer } from '../reducers';
+import { History } from 'history';
+import { routerMiddleware, routerReducer } from 'react-router-redux';
 import {
     createStore,
     applyMiddleware,
@@ -13,7 +13,7 @@ import {
     Store,
     DeepPartial,
     StoreEnhancerStoreCreator,
-} from "redux";
+} from 'redux';
 
 declare global {
     // tslint:disable-next-line:interface-name

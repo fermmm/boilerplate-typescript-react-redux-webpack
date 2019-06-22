@@ -38,6 +38,7 @@
           ]
         }
     ],
+    "quotemark": [true, "single", "jsx-double"],
     "no-any": true,
     "no-object": true,
     "ban-ts-ignore-except-imports": true,
@@ -67,7 +68,8 @@
     "object-literal-key-quotes": false,
     "member-access": false,
     "arrow-parens": false,
-    "no-unused-expression": false
+    "no-unused-expression": false,
+    "trailing-comma": false
   },
   "jsRules": {},
   "rulesDirectory": "./tslint/custom-rules/"

@@ -1,14 +1,14 @@
-import * as React from "react";
-import { hot } from "react-hot-loader";
-import { History } from "history";
-import { Route, Switch } from "react-router";
-import { ConnectedRouter } from "react-router-redux";
-import { connect } from "react-redux";
-import { IStore, DispatchFunction } from "../../redux/reducers";
-import { CHANGE_APP_SETTINGS } from "../../redux/actions";
-import { ErrorBoundary } from "./ErrorBoundary/ErrorBoundary";
-import CompleteComponent from "../pages/CompleteComponent/CompleteComponent";
-import SimpleComponent from "../pages/SimpleComponent/SimpleComponent";
+import * as React from 'react';
+import { hot } from 'react-hot-loader';
+import { History } from 'history';
+import { Route, Switch } from 'react-router';
+import { ConnectedRouter } from 'react-router-redux';
+import { connect } from 'react-redux';
+import { IStore, DispatchFunction } from '../../redux/reducers';
+import { CHANGE_APP_SETTINGS } from '../../redux/actions';
+import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
+import CompleteComponent from '../pages/CompleteComponent/CompleteComponent';
+import SimpleComponent from '../pages/SimpleComponent/SimpleComponent';
 
 export interface IAppProps {
     history?: History;
@@ -23,7 +23,7 @@ class App extends React.Component<IAppProps> {
     
     public componentDidMount(): void {
         App.history = this.props.history;
-        this.props.onNewAppProps({appTitle: "React app"});
+        this.props.onNewAppProps({appTitle: 'React app'});
     }
 
     public render(): JSX.Element {
@@ -34,8 +34,8 @@ class App extends React.Component<IAppProps> {
             <ConnectedRouter history={history}>
                 <ErrorBoundary>
                     <Switch>
-                        <Route exact path={"/"} component={CompleteComponent} />
-                        <Route path={"/simple"} component={SimpleComponent} />
+                        <Route exact path={'/'} component={CompleteComponent} />
+                        <Route path={'/simple'} component={SimpleComponent} />
                     </Switch>
                 </ErrorBoundary>
             </ConnectedRouter>

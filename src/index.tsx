@@ -1,12 +1,12 @@
-// import "@babel/polyfill";    // Uncomment this line if you want to support Internet Explorer
-import * as React from "react";
-import * as ReactDOM from "react-dom";
-import { Provider } from "react-redux";
-import configureStore, { IStoreAndHistory } from "./redux/store";
-import App from "./components/App/App";
+// import '@babel/polyfill';    // Uncomment this line if you want to support Internet Explorer
+import * as React from 'react';
+import * as ReactDOM from 'react-dom';
+import { Provider } from 'react-redux';
+import configureStore, { IStoreAndHistory } from './redux/store';
+import App from './components/App/App';
 
 // @ts-ignore
-import "./global-styles/index.scss";
+import './global-styles/index.scss';
 
 const { store, history }: IStoreAndHistory = configureStore({});
 
@@ -16,4 +16,4 @@ const RootComponent: JSX.Element = (
     </Provider>
 );
 
-ReactDOM.render(RootComponent, document.getElementById("root"));
+ReactDOM.render(RootComponent, document.getElementById('root'));

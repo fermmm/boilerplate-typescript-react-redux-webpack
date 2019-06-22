@@ -1,12 +1,12 @@
-import React, { Component } from "react";
-import { hot } from "react-hot-loader";
-import { RouteComponentProps, withRouter } from "react-router";
-import { connect } from "react-redux";
-import { IStore, DispatchFunction } from "../../../redux/reducers";
-import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from "../../../redux/actions";
+import React, { Component } from 'react';
+import { hot } from 'react-hot-loader';
+import { RouteComponentProps, withRouter } from 'react-router';
+import { connect } from 'react-redux';
+import { IStore, DispatchFunction } from '../../../redux/reducers';
+import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from '../../../redux/actions';
 
 // @ts-ignore
-import styles from "./CompleteComponent.scss";
+import styles from './CompleteComponent.scss';
 
 export interface ICompleteComponentProps extends Partial<RouteComponentProps<{}>> { 
     reduxTextLine: string;
@@ -23,7 +23,7 @@ class CompleteComponent extends Component<ICompleteComponentProps & RouteCompone
 
     public componentDidMount(): void {
         // Send stuff to redux only show that redux is working:
-        this.props.onNewReduxText("And this second text line was stored and retreived from redux.");
+        this.props.onNewReduxText('And this second text line was stored and retreived from redux.');
         this.props.onNewReduxNumber(555);
     }
 
@@ -36,7 +36,7 @@ class CompleteComponent extends Component<ICompleteComponentProps & RouteCompone
                 Also the following number: <br />
                 {this.props.reduxNumber}
                 <br />
-                <button onClick={() => this.props.history.push("/simple/")}>
+                <button onClick={() => this.props.history.push('/simple/')}>
                     Show a more simple component.
                 </button>
             </div>

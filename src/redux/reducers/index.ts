@@ -1,7 +1,7 @@
-import { IAppProps } from "./../../components/App/App";
-import { appReducer } from "./app/appReducer";
-import { completeComponentReducer } from "./completeComponent/completeComponentReducer";
-import { ICompleteComponentProps } from "../../components/pages/CompleteComponent/CompleteComponent";
+import { IAppProps } from './../../components/App/App';
+import { appReducer } from './app/appReducer';
+import { completeComponentReducer } from './completeComponent/completeComponentReducer';
+import { ICompleteComponentProps } from '../../components/pages/CompleteComponent/CompleteComponent';
 
 const rootReducer: IRootReducer = {
     appState: appReducer,

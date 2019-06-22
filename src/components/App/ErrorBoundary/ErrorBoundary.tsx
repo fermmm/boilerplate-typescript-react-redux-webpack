@@ -1,7 +1,7 @@
-import * as React from "react";
+import * as React from 'react';
 
 // @ts-ignore
-import styles from "./ErrorBoundary.scss";
+import styles from './ErrorBoundary.scss';
 
 interface IState {
     error: Error;

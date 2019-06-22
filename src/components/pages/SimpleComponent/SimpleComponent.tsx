@@ -1,8 +1,8 @@
-import React, { Component } from "react";
-import { hot } from "react-hot-loader";
+import React, { Component } from 'react';
+import { hot } from 'react-hot-loader';
 
 // @ts-ignore
-import styles from "./SimpleComponent.scss";
+import styles from './SimpleComponent.scss';
 
 export interface ISimpleComponentProps { }
 export interface ISimpleComponentState { }
