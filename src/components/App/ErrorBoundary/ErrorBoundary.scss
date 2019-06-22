@@ -1,4 +1,11 @@
-@import "../../../global-styles/styles/vars";
+$gutterLarge: 28px;
+$gutterBig: 21px;
+$gutter: 14px;
+$gutterSmall: 7px;
+$gutterTiny: 5px;
+$gray-light: #e7e7e7;
+$gray-dim: #777;
+$red-base: #e34848;
 
 .container {
     max-width: 980px;
