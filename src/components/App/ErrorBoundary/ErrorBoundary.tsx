@@ -3,13 +3,13 @@ import * as React from 'react';
 // @ts-ignore
 import styles from './ErrorBoundary.scss';
 
-interface IState {
+interface State {
     error: Error;
     info: React.ErrorInfo;
 }
 
-export class ErrorBoundary extends React.Component<{}, IState> {
-    public state: IState = {
+export class ErrorBoundary extends React.Component<{}, State> {
+    public state: State = {
         error: null,
         info: null,
     };

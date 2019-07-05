@@ -1,28 +1,28 @@
-import { IAppProps } from './../../components/App/App';
+import { AppProps } from './../../components/App/App';
 import { appReducer } from './app/appReducer';
 import { completeComponentReducer } from './completeComponent/completeComponentReducer';
-import { ICompleteComponentProps } from '../../components/pages/CompleteComponent/CompleteComponent';
+import { CompleteComponentProps } from '../../components/pages/CompleteComponent/CompleteComponent';
 
-const rootReducer: IRootReducer = {
+const rootReducer: RootReducer = {
     appState: appReducer,
     completeComponentState: completeComponentReducer,
 };
 
-export interface IRootReducer {
-    appState: (state?: IAppProps, action?: IReduxAction<IAppProps>) => IAppProps;
-    completeComponentState: (state?: ICompleteComponentProps, action?: IReduxAction<string | number>) => ICompleteComponentProps;
+export interface RootReducer {
+    appState: (state?: AppProps, action?: ReduxAction<AppProps>) => AppProps;
+    completeComponentState: (state?: CompleteComponentProps, action?: ReduxAction<string | number>) => CompleteComponentProps;
 }
 
 export interface IStore {
-    appState: IAppProps;
-    completeComponentState: ICompleteComponentProps;
+    appState: AppProps;
+    completeComponentState: CompleteComponentProps;
 }
 
-export interface IReduxAction<T> {
+export interface ReduxAction<T> {
     type: string;
     payload: T;
 }
 
-export type DispatchFunction<T> = (v: IReduxAction<Partial<T>>) => void;
+export type DispatchFunction<T> = (v: ReduxAction<Partial<T>>) => void;
 
 export { rootReducer };

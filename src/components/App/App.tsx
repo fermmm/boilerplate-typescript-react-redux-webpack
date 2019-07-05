@@ -10,15 +10,15 @@ import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 import CompleteComponent from '../pages/CompleteComponent/CompleteComponent';
 import SimpleComponent from '../pages/SimpleComponent/SimpleComponent';
 
-export interface IAppProps {
+export interface AppProps {
     history?: History;
     appTitle?: string;
-    onNewAppProps?: (newProps: Partial<IAppProps>) => void;
+    onNewAppProps?: (newProps: Partial<AppProps>) => void;
 }
 
-export interface IAppState {}
+export interface AppState {}
 
-class App extends React.Component<IAppProps> {
+class App extends React.Component<AppProps> {
     public static history: History;
     
     public componentDidMount(): void {
@@ -27,7 +27,7 @@ class App extends React.Component<IAppProps> {
     }
 
     public render(): JSX.Element {
-        const { history }: Partial<IAppProps> = this.props;
+        const { history }: Partial<AppProps> = this.props;
 
         document.title = this.props.appTitle;
         return (
@@ -48,13 +48,13 @@ class App extends React.Component<IAppProps> {
  * REDUX CONNECTORS. (Remove when redux is not needed)
  * 
  */
-function mapStateToProps(state: IStore): Partial<IAppProps> {
+function mapStateToProps(state: IStore): Partial<AppProps> {
     return {...state.appState};
 }
 
-function mapDispatchToProps(dispatch: DispatchFunction<IAppProps>): Partial<IAppProps> {
+function mapDispatchToProps(dispatch: DispatchFunction<AppProps>): Partial<AppProps> {
     return {
-        onNewAppProps: (newProps: Partial<IAppProps>) => dispatch({type: CHANGE_APP_SETTINGS, payload: newProps}),
+        onNewAppProps: (newProps: Partial<AppProps>) => dispatch({type: CHANGE_APP_SETTINGS, payload: newProps}),
     };
 }
-export default connect<{}, {}, IAppProps>(mapStateToProps, mapDispatchToProps)(hot(module)(App));
+export default connect<{}, {}, AppProps>(mapStateToProps, mapDispatchToProps)(hot(module)(App));

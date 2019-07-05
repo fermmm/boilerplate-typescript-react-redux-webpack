@@ -4,11 +4,11 @@ import { hot } from 'react-hot-loader';
 // @ts-ignore
 import styles from './SimpleComponent.scss';
 
-export interface ISimpleComponentProps { }
-export interface ISimpleComponentState { }
+export interface SimpleComponentProps { }
+export interface SimpleComponentState { }
 
-class SimpleComponent extends Component<ISimpleComponentProps, ISimpleComponentState> {
-    static defaultProps: Partial<ISimpleComponentProps> = {
+class SimpleComponent extends Component<SimpleComponentProps, SimpleComponentState> {
+    static defaultProps: Partial<SimpleComponentProps> = {
         
     };
     

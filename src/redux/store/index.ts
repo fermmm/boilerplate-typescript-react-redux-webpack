@@ -51,7 +51,7 @@ if (__DEV__) {
     }
 }
 
-export default function configureStore(initialState: DeepPartial<{}>): IStoreAndHistory {
+export default function configureStore(initialState: DeepPartial<{}>): StoreAndHistory {
     // Base store configuration
     const store: Store = createStore(
         combineReducers({ ...rootReducer, router: routerReducer }),
@@ -62,7 +62,7 @@ export default function configureStore(initialState: DeepPartial<{}>): IStoreAnd
     return { store, history };
 }
 
-export interface IStoreAndHistory {
+export interface StoreAndHistory {
     store: Store; 
     history: History;
 }

@@ -1,13 +1,13 @@
 import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from '../../actions/index';
-import { IReduxAction } from '..';
-import { ICompleteComponentProps } from '../../../components/pages/CompleteComponent/CompleteComponent';
+import { ReduxAction } from '..';
+import { CompleteComponentProps } from '../../../components/pages/CompleteComponent/CompleteComponent';
 
-const initialState: ICompleteComponentProps = {
+const initialState: CompleteComponentProps = {
     reduxTextLine: '',
     reduxNumber: 0,
 };
 
-export function completeComponentReducer(state: ICompleteComponentProps = initialState, action: IReduxAction<string | number> = { type: '', payload: null }): ICompleteComponentProps {
+export function completeComponentReducer(state: CompleteComponentProps = initialState, action: ReduxAction<string | number> = { type: '', payload: null }): CompleteComponentProps {
     switch (action.type) {
         case CHANGE_HELLO_TEXT:
             return {...state,  reduxTextLine: action.payload as string};

@@ -8,16 +8,16 @@ import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from '../../../redux/actions';
 // @ts-ignore
 import styles from './CompleteComponent.scss';
 
-export interface ICompleteComponentProps extends Partial<RouteComponentProps<{}>> { 
+export interface CompleteComponentProps extends Partial<RouteComponentProps<{}>> { 
     reduxTextLine: string;
     reduxNumber: number;
     onNewReduxText?(text: string): void;
     onNewReduxNumber?(newNumber: number): void;
 }
-export interface ICompleteComponentState { }
+export interface CompleteComponentState { }
 
-class CompleteComponent extends Component<ICompleteComponentProps & RouteComponentProps<{}>, ICompleteComponentState> {
-    static defaultProps: Partial<ICompleteComponentProps> = {
+class CompleteComponent extends Component<CompleteComponentProps & RouteComponentProps<{}>, CompleteComponentState> {
+    static defaultProps: Partial<CompleteComponentProps> = {
         
     };
 
@@ -49,18 +49,18 @@ class CompleteComponent extends Component<ICompleteComponentProps & RouteCompone
  * REDUX CONNECTORS. (Remove when redux is not needed)
  * 
  */
-function mapStateToProps(state: IStore): Partial<ICompleteComponentProps> {
+function mapStateToProps(state: IStore): Partial<CompleteComponentProps> {
     return {
         reduxTextLine: state.completeComponentState.reduxTextLine,
         reduxNumber: state.completeComponentState.reduxNumber,
     };
 }
 
-function mapDispatchToProps(dispatch: DispatchFunction<string | number>): Partial<ICompleteComponentProps> {
+function mapDispatchToProps(dispatch: DispatchFunction<string | number>): Partial<CompleteComponentProps> {
     return {
         onNewReduxText: (text: string) => dispatch({type: CHANGE_HELLO_TEXT, payload: text}),
         onNewReduxNumber: (newNumber: number) => dispatch({type: CHANGE_HELLO_NUMBER, payload: newNumber}),
     };
 }
 
-export default connect<{}, {}, ICompleteComponentProps>(mapStateToProps, mapDispatchToProps)(hot(module)(withRouter(CompleteComponent)));
+export default connect<{}, {}, CompleteComponentProps>(mapStateToProps, mapDispatchToProps)(hot(module)(withRouter(CompleteComponent)));
