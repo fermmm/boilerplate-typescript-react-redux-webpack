@@ -9,6 +9,7 @@
         "esModuleInterop": true,
         "allowSyntheticDefaultImports": true,
         "skipLibCheck": true,
+        "suppressImplicitAnyIndexErrors": true,
         "lib": ["es5", "es6", "dom"],
     },
     "include": [
