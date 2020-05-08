@@ -1,66 +1,42 @@
-import React, { Component } from 'react';
+import React, { FC } from 'react';
+import { Dispatch } from 'redux'
+import { ConnectedRouterProps } from 'connected-react-router';
+import { useSelector, useDispatch } from 'react-redux'
 import { hot } from 'react-hot-loader';
-import { RouteComponentProps, withRouter } from 'react-router';
-import { connect } from 'react-redux';
-import { IStore, DispatchFunction } from '../../../redux/reducers';
-import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from '../../../redux/actions';
+import { Store } from '../../../redux/reducers';
+import { changeHelloText, changeHelloNumber } from '../../../redux/actions/CompleteComponent/CompleteComponent';
 
 // @ts-ignore
 import styles from './CompleteComponent.scss';
 
-export interface CompleteComponentProps extends Partial<RouteComponentProps<{}>> { 
-    reduxTextLine: string;
-    reduxNumber: number;
-    onNewReduxText?(text: string): void;
-    onNewReduxNumber?(newNumber: number): void;
-}
-export interface CompleteComponentState { }
-
-class CompleteComponent extends Component<CompleteComponentProps & RouteComponentProps<{}>, CompleteComponentState> {
-    static defaultProps: Partial<CompleteComponentProps> = {
-        
-    };
-
-    public componentDidMount(): void {
-        // Send stuff to redux only show that redux is working:
-        this.props.onNewReduxText('And this second text line was stored and retreived from redux.');
-        this.props.onNewReduxNumber(555);
-    }
-
-    public render(): JSX.Element {
-        return (
-            <div className={styles.completeComponent}>
-                {/* Show the redux data. */} 
-                It's working. <br />
-                {this.props.reduxTextLine} <br />
-                Also the following number: <br />
-                {this.props.reduxNumber}
-                <br />
-                <button onClick={() => this.props.history.push('/simple/')}>
-                    Show a more simple component.
-                </button>
-            </div>
-        );
-    }
+interface CompleteComponentProps extends ConnectedRouterProps { 
+    /// ... Your props here ....
 }
 
-/**
- * 
- * REDUX CONNECTORS. (Remove when redux is not needed)
- * 
- */
-function mapStateToProps(state: IStore): Partial<CompleteComponentProps> {
-    return {
-        reduxTextLine: state.completeComponentState.reduxTextLine,
-        reduxNumber: state.completeComponentState.reduxNumber,
-    };
+export const CompleteComponent: FC<CompleteComponentProps> = ({history}) => {
+    const reduxTextLine: string = useSelector<Store, string>(state => state.completeComponentState.reduxTextLine);
+    const reduxNumber: number = useSelector<Store, number>(state => state.completeComponentState.reduxNumber);
+    const dispatch: Dispatch = useDispatch();
+
+    React.useEffect(() => {
+        // Send stuff to redux when mounting the component only to show that redux is working:
+        dispatch(changeHelloText('And this second text line was stored and retrieved from redux.'));
+        dispatch(changeHelloNumber(555));
+    }, []);
+
+    return (
+        <div className={styles.completeComponent}>
+            {/* Show the redux data. */} 
+            It's working. <br />
+            {reduxTextLine} <br />
+            Also the following number: <br />
+            {reduxNumber}
+            <br />
+            <button onClick={() => history.push('/simple/')}>
+                Show a more simple component.
+            </button>
+        </div>
+    );
 }
 
-function mapDispatchToProps(dispatch: DispatchFunction<string | number>): Partial<CompleteComponentProps> {
-    return {
-        onNewReduxText: (text: string) => dispatch({type: CHANGE_HELLO_TEXT, payload: text}),
-        onNewReduxNumber: (newNumber: number) => dispatch({type: CHANGE_HELLO_NUMBER, payload: newNumber}),
-    };
-}
-
-export default connect<{}, {}, CompleteComponentProps>(mapStateToProps, mapDispatchToProps)(hot(module)(withRouter(CompleteComponent)));
+export default hot(module)(CompleteComponent);

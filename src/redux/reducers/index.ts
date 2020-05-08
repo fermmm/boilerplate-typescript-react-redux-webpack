@@ -1,23 +1,24 @@
 import { completeComponentReducer } from './completeComponent/completeComponentReducer';
-import { CompleteComponentProps } from '../../components/pages/CompleteComponent/CompleteComponent';
+import { StoreMiddlewares } from '../store';
+import { CompleteComponentStore } from '../actions/CompleteComponent/CompleteComponent';
+import { ValueOf } from 'ts-essentials';
+
+// Add new store props in these 3 elements: 
+export interface RootReducer {
+    completeComponentState: Reducer<CompleteComponentStore>;
+}
 
 const rootReducer: RootReducer = {
     completeComponentState: completeComponentReducer,
 };
 
-export interface RootReducer {
-    completeComponentState: (state?: CompleteComponentProps, action?: ReduxAction<string | number>) => CompleteComponentProps;
+export interface Store extends StoreMiddlewares {
+    completeComponentState: CompleteComponentStore;
 }
 
-export interface IStore {
-    completeComponentState: CompleteComponentProps;
-}
-
-export interface ReduxAction<T> {
-    type: string;
-    payload: T;
-}
-
-export type DispatchFunction<T> = (v: ReduxAction<Partial<T>>) => void;
+// Typings:
+export interface DispatcherMessage<T> { type: string; payload: ValueOf<T>; } 
+export type DispatcherCreator<T> = (payload: T) => { type: string; payload: T; } 
+export type Reducer<T> = (state?: T, action?: DispatcherMessage<T>) => T;
 
 export { rootReducer };

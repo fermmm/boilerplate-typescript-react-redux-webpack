@@ -19,7 +19,8 @@ module.exports = {
 
     // Files that should be resolved by webpack
     resolve: {
-        extensions: [".ts", ".tsx", ".js", ".json", ".jsx", ".scss"]
+        extensions: [".ts", ".tsx", ".js", ".json", ".jsx", ".scss"],
+        alias: { 'react-dom': '@hot-loader/react-dom'  }
     },
 
     // Loaders

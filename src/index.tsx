@@ -2,16 +2,14 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import { Provider } from 'react-redux';
-import configureStore, { StoreAndHistory } from './redux/store';
+import configureStore from './redux/store';
 import App from './components/App/App';
 
 // @ts-ignore
 import './global-styles/index.scss';
 
-const { store, history }: StoreAndHistory = configureStore();
-
-const RootComponent: JSX.Element = (
-    <Provider store={store}>
+const RootComponent: React.ReactElement = (
+    <Provider store={configureStore()}>
         <App/>
     </Provider>
 );

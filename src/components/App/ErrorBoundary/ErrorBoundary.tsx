@@ -18,7 +18,7 @@ export class ErrorBoundary extends React.Component<{}, State> {
         this.setState({ error, info });
     }
 
-    public render(): JSX.Element | {} {
+    public render(): React.ReactNode {
         const { error, info }: { error: Error, info: React.ErrorInfo } = this.state;
         return error ? (
             <div className={styles.container}>

@@ -1,13 +1,12 @@
-import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER } from '../../actions/index';
-import { ReduxAction } from '..';
-import { CompleteComponentProps } from '../../../components/pages/CompleteComponent/CompleteComponent';
+import { Reducer } from '../index';
+import { CHANGE_HELLO_TEXT, CHANGE_HELLO_NUMBER, CompleteComponentStore } from '../../actions/CompleteComponent/CompleteComponent';
 
-const initialState: CompleteComponentProps = {
+const initialState: CompleteComponentStore = {
     reduxTextLine: '',
     reduxNumber: 0,
 };
 
-export function completeComponentReducer(state: CompleteComponentProps = initialState, action: ReduxAction<string | number> = { type: '', payload: null }): CompleteComponentProps {
+export const completeComponentReducer: Reducer<CompleteComponentStore> = (state = initialState, action) => {
     switch (action.type) {
         case CHANGE_HELLO_TEXT:
             return {...state,  reduxTextLine: action.payload as string};

@@ -1,5 +1,5 @@
 
-import { connectRouter, routerMiddleware } from 'connected-react-router'
+import { connectRouter, routerMiddleware, RouterState } from 'connected-react-router'
 import { rootReducer } from '../reducers';
 import { createBrowserHistory, History } from 'history';
 import {
@@ -10,7 +10,6 @@ import {
     StoreEnhancer,
     Middleware,
     Store,
-    DeepPartial,
     StoreEnhancerStoreCreator,
 } from 'redux';
 
@@ -50,18 +49,14 @@ if (__DEV__) {
     }
 }
 
-export default function configureStore(initialState: DeepPartial<{}> = {}): StoreAndHistory {
+export default function configureStore(): Store {
     // Base store configuration
-    const store: Store = createStore(
+    return createStore(
         combineReducers({ ...rootReducer, router: connectRouter(history) }),
-        initialState,
         compose(...storeEnhancers),
     );
-
-    return { store, history };
 }
 
-export interface StoreAndHistory {
-    store: Store; 
-    history: History;
+export interface StoreMiddlewares {
+    router: RouterState;
 }
