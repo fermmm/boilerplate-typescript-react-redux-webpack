@@ -1,23 +1,22 @@
-
-import { connectRouter, routerMiddleware, RouterState } from 'connected-react-router'
-import { rootReducer } from '../reducers';
+import { connectRouter, routerMiddleware, RouterState } from 'connected-react-router';
 import { createBrowserHistory, History } from 'history';
 import {
-    createStore,
-    applyMiddleware,
-    compose,
-    combineReducers,
-    StoreEnhancer,
-    Middleware,
-    Store,
-    StoreEnhancerStoreCreator,
+   applyMiddleware,
+   combineReducers,
+   compose,
+   createStore,
+   Middleware,
+   Store,
+   StoreEnhancer,
+   StoreEnhancerStoreCreator,
 } from 'redux';
+import { rootReducer } from '../reducers';
 
 declare global {
-    // tslint:disable-next-line:interface-name
-    interface Window { 
-        __REDUX_DEVTOOLS_EXTENSION__: StoreEnhancer;
-    }
+   // tslint:disable-next-line:interface-name
+   interface Window {
+      __REDUX_DEVTOOLS_EXTENSION__: StoreEnhancer;
+   }
 }
 
 // Webpack environment variable:
@@ -35,28 +34,25 @@ export const history: History = createBrowserHistory();
 // middlewares.push(authMiddleware);
 
 // Apply middlewares
-storeEnhancers.push(applyMiddleware(
-    routerMiddleware(history),
-    ...middlewares
-));
+storeEnhancers.push(applyMiddleware(routerMiddleware(history), ...middlewares));
 
 // Add dev-tools storeEnhancer
 if (__DEV__) {
-    const debugEnhancer: StoreEnhancer | StoreEnhancerStoreCreator =
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(undefined);
-    if (debugEnhancer) {
-        storeEnhancers.push(debugEnhancer);
-    }
+   const debugEnhancer: StoreEnhancer | StoreEnhancerStoreCreator =
+      window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__(undefined);
+   if (debugEnhancer) {
+      storeEnhancers.push(debugEnhancer);
+   }
 }
 
 export default function configureStore(): Store {
-    // Base store configuration
-    return createStore(
-        combineReducers({ ...rootReducer, router: connectRouter(history) }),
-        compose(...storeEnhancers),
-    );
+   // Base store configuration
+   return createStore(
+      combineReducers({ ...rootReducer, router: connectRouter(history) }),
+      compose(...storeEnhancers),
+   );
 }
 
 export interface StoreMiddlewares {
-    router: RouterState;
+   router: RouterState;
 }
