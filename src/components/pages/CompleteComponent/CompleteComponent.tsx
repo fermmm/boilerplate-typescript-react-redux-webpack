@@ -13,9 +13,7 @@ interface CompleteComponentProps extends ConnectedRouterProps {
 }
 
 export const CompleteComponent: FC<CompleteComponentProps> = ({ history }) => {
-   const reduxTextLine: string = useSelector<Store, string>(
-      state => state.completeComponentState.reduxTextLine,
-   );
+   const reduxTextLine: string = useSelector<Store, string>(state => state.completeComponentState.reduxTextLine);
    const reduxNumber: number = useSelector<Store, number>(state => state.completeComponentState.reduxNumber);
    const dispatch: Dispatch = useDispatch();
 
