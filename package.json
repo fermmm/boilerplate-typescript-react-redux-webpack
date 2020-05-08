@@ -1,73 +1,73 @@
 {
-  "name": "project-name",
-  "version": "1.0.0",
-  "description": "Project description",
-  "author": "Fernando Medina",
-  "scripts": {
-    "start": "NODE_ENV=development webpack-dev-server --config ./webpack/dev.js",
-    "build": "NODE_ENV=production webpack --progress --config ./webpack/prod.js",
-    "prettier": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\""
-  },
-  "dependencies": {
-    "@babel/polyfill": "^7.8.7",
-    "connected-react-router": "^6.8.0",
-    "core-js": "^3.6.5",
-    "dotenv-webpack": "^1.7.0",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-hot-loader": "^4.12.21",
-    "react-redux": "^7.2.0",
-    "react-router": "^5.1.2"
-  },
-  "devDependencies": {
-    "@babel/core": "^7.9.6",
-    "@babel/preset-env": "^7.9.6",
-    "@babel/preset-react": "^7.9.4",
-    "@hot-loader/react-dom": "^16.13.0",
-    "@types/react": "^16.9.34",
-    "@types/react-dom": "^16.9.7",
-    "@types/react-hot-loader": "^4.1.1",
-    "@types/react-redux": "^7.1.8",
-    "@types/react-router": "^5.1.7",
-    "@types/webpack-env": "^1.15.2",
-    "awesome-typescript-loader": "^5.2.1",
-    "babel-loader": "^8.1.0",
-    "clean-webpack-plugin": "^3.0.0",
-    "copy-webpack-plugin": "^5.1.1",
-    "css-loader": "^3.5.3",
-    "file-loader": "^6.0.0",
-    "html-webpack-plugin": "^4.3.0",
-    "husky": "^4.2.5",
-    "lint-staged": "^10.2.2",
-    "node-sass": "^4.14.1",
-    "opn-webpack-plugin": "^1.0.2",
-    "postcss-each": "^0.10.0",
-    "postcss-import": "^12.0.1",
-    "postcss-loader": "^3.0.0",
-    "postcss-mixins": "^6.2.3",
-    "postcss-preset-env": "^6.7.0",
-    "prettier": "2.0.5",
-    "prettier-plugin-organize-imports": "^1.0.3",
-    "sass-loader": "^8.0.2",
-    "source-map-loader": "^0.2.4",
-    "style-loader": "^1.2.1",
-    "ts-essentials": "^6.0.4",
-    "tslint": "^6.1.2",
-    "tslint-loader": "^3.6.0",
-    "tslint-react": "^5.0.0",
-    "typescript": "^3.8.3",
-    "webpack": "^4.43.0",
-    "webpack-cli": "^3.3.11",
-    "webpack-dev-server": "^3.11.0",
-    "webpack-env": "^0.8.0",
-    "webpack-merge": "^4.2.2"
-  },
-  "husky": {
-    "hooks": {
-      "pre-commit": "lint-staged"
-    }
-  },
-  "lint-staged": {
-    "*.{js,css,md}": "prettier --write"
-  }
+   "name": "project-name",
+   "version": "1.0.0",
+   "description": "Project description",
+   "author": "Fernando Medina",
+   "scripts": {
+      "start": "NODE_ENV=development webpack-dev-server --config ./webpack/dev.js",
+      "build": "NODE_ENV=production webpack --progress --config ./webpack/prod.js",
+      "prettier": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\""
+   },
+   "dependencies": {
+      "@babel/polyfill": "^7.8.7",
+      "connected-react-router": "^6.8.0",
+      "core-js": "^3.6.5",
+      "dotenv-webpack": "^1.7.0",
+      "react": "^16.13.1",
+      "react-dom": "^16.13.1",
+      "react-hot-loader": "^4.12.21",
+      "react-redux": "^7.2.0",
+      "react-router": "^5.1.2"
+   },
+   "devDependencies": {
+      "@babel/core": "^7.9.6",
+      "@babel/preset-env": "^7.9.6",
+      "@babel/preset-react": "^7.9.4",
+      "@hot-loader/react-dom": "^16.13.0",
+      "@types/react": "^16.9.34",
+      "@types/react-dom": "^16.9.7",
+      "@types/react-hot-loader": "^4.1.1",
+      "@types/react-redux": "^7.1.8",
+      "@types/react-router": "^5.1.7",
+      "@types/webpack-env": "^1.15.2",
+      "awesome-typescript-loader": "^5.2.1",
+      "babel-loader": "^8.1.0",
+      "clean-webpack-plugin": "^3.0.0",
+      "copy-webpack-plugin": "^5.1.1",
+      "css-loader": "^3.5.3",
+      "file-loader": "^6.0.0",
+      "html-webpack-plugin": "^4.3.0",
+      "husky": "^4.2.5",
+      "lint-staged": "^10.2.2",
+      "node-sass": "^4.14.1",
+      "opn-webpack-plugin": "^1.0.2",
+      "postcss-each": "^0.10.0",
+      "postcss-import": "^12.0.1",
+      "postcss-loader": "^3.0.0",
+      "postcss-mixins": "^6.2.3",
+      "postcss-preset-env": "^6.7.0",
+      "prettier": "2.0.5",
+      "prettier-plugin-organize-imports": "^1.0.3",
+      "sass-loader": "^8.0.2",
+      "source-map-loader": "^0.2.4",
+      "style-loader": "^1.2.1",
+      "ts-essentials": "^6.0.4",
+      "tslint": "^6.1.2",
+      "tslint-loader": "^3.6.0",
+      "tslint-react": "^5.0.0",
+      "typescript": "^3.8.3",
+      "webpack": "^4.43.0",
+      "webpack-cli": "^3.3.11",
+      "webpack-dev-server": "^3.11.0",
+      "webpack-env": "^0.8.0",
+      "webpack-merge": "^4.2.2"
+   },
+   "husky": {
+      "hooks": {
+         "pre-commit": "lint-staged"
+      }
+   },
+   "lint-staged": {
+      "*": "npm run prettier"
+   }
 }
