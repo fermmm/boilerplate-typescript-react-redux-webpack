@@ -1,8 +1,7 @@
 
-import createHistory from 'history/createHashHistory';
+import { connectRouter, routerMiddleware } from 'connected-react-router'
 import { rootReducer } from '../reducers';
-import { History } from 'history';
-import { routerMiddleware, routerReducer } from 'react-router-redux';
+import { createBrowserHistory, History } from 'history';
 import {
     createStore,
     applyMiddleware,
@@ -22,25 +21,25 @@ declare global {
     }
 }
 
-// WEBPACK ENVIRONMENT VARIABLE
+// Webpack environment variable:
 declare const __DEV__: boolean;
 
-// BROWSER HISTORY
-const history: History = createHistory();
-
-// STORE CONFIGURATIONS
-const storeEnhancers: Array<StoreEnhancer | StoreEnhancerStoreCreator> = [];
+// Store configurations:
+const storeEnhancers: (StoreEnhancer | StoreEnhancerStoreCreator)[] = [];
 const middlewares: Middleware[] = [];
 
-// Add router middleware to sync redux with the routing history
-middlewares.push(routerMiddleware(history));
+// History:
+export const history: History = createBrowserHistory();
 
 // Promise middleware to handle pending, failed and successful requests with promise resolving
 // middlewares.push(promiseMiddleware);
 // middlewares.push(authMiddleware);
 
 // Apply middlewares
-storeEnhancers.push(applyMiddleware(...middlewares));
+storeEnhancers.push(applyMiddleware(
+    routerMiddleware(history),
+    ...middlewares
+));
 
 // Add dev-tools storeEnhancer
 if (__DEV__) {
@@ -51,10 +50,10 @@ if (__DEV__) {
     }
 }
 
-export default function configureStore(initialState: DeepPartial<{}>): StoreAndHistory {
+export default function configureStore(initialState: DeepPartial<{}> = {}): StoreAndHistory {
     // Base store configuration
     const store: Store = createStore(
-        combineReducers({ ...rootReducer, router: routerReducer }),
+        combineReducers({ ...rootReducer, router: connectRouter(history) }),
         initialState,
         compose(...storeEnhancers),
     );

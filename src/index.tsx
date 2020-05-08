@@ -8,11 +8,11 @@ import App from './components/App/App';
 // @ts-ignore
 import './global-styles/index.scss';
 
-const { store, history }: StoreAndHistory = configureStore({});
+const { store, history }: StoreAndHistory = configureStore();
 
 const RootComponent: JSX.Element = (
     <Provider store={store}>
-        <App history={history} />
+        <App/>
     </Provider>
 );
 

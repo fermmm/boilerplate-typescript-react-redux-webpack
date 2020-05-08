@@ -1,35 +1,14 @@
 import * as React from 'react';
 import { hot } from 'react-hot-loader';
-import { History } from 'history';
 import { Route, Switch } from 'react-router';
-import { ConnectedRouter } from 'react-router-redux';
-import { connect } from 'react-redux';
-import { IStore, DispatchFunction } from '../../redux/reducers';
-import { CHANGE_APP_SETTINGS } from '../../redux/actions';
 import { ErrorBoundary } from './ErrorBoundary/ErrorBoundary';
 import CompleteComponent from '../pages/CompleteComponent/CompleteComponent';
 import SimpleComponent from '../pages/SimpleComponent/SimpleComponent';
+import { ConnectedRouter } from 'connected-react-router';
+import { history } from '../../redux/store';
 
-export interface AppProps {
-    history?: History;
-    appTitle?: string;
-    onNewAppProps?: (newProps: Partial<AppProps>) => void;
-}
-
-export interface AppState {}
-
-class App extends React.Component<AppProps> {
-    public static history: History;
-    
-    public componentDidMount(): void {
-        App.history = this.props.history;
-        this.props.onNewAppProps({appTitle: 'React app'});
-    }
-
+class App extends React.Component {
     public render(): JSX.Element {
-        const { history }: Partial<AppProps> = this.props;
-
-        document.title = this.props.appTitle;
         return (
             <ConnectedRouter history={history}>
                 <ErrorBoundary>
@@ -43,18 +22,4 @@ class App extends React.Component<AppProps> {
     }
 }
 
-/**
- * 
- * REDUX CONNECTORS. (Remove when redux is not needed)
- * 
- */
-function mapStateToProps(state: IStore): Partial<AppProps> {
-    return {...state.appState};
-}
-
-function mapDispatchToProps(dispatch: DispatchFunction<AppProps>): Partial<AppProps> {
-    return {
-        onNewAppProps: (newProps: Partial<AppProps>) => dispatch({type: CHANGE_APP_SETTINGS, payload: newProps}),
-    };
-}
-export default connect<{}, {}, AppProps>(mapStateToProps, mapDispatchToProps)(hot(module)(App));
+export default hot(module)(App)
