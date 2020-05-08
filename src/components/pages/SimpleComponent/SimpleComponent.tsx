@@ -4,10 +4,11 @@ import { hot } from 'react-hot-loader';
 // @ts-ignore
 import styles from './SimpleComponent.scss';
 
-interface SimpleComponentProps { }
-interface SimpleComponentState { }
+interface SimpleComponentProps { 
+    // ... Your props here ...
+}
 
-export const SimpleComponent: FC = () => {
+export const SimpleComponent: FC<SimpleComponentProps> = () => {
     return (
         <div className={styles.simpleComponent}>
             Example of a simple component. No Redux, no router props.
