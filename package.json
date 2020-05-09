@@ -6,7 +6,8 @@
    "scripts": {
       "start": "NODE_ENV=development webpack-dev-server --config ./webpack/dev.js",
       "build": "NODE_ENV=production webpack --progress --config ./webpack/prod.js",
-      "prettier": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\""
+      "prettier": "prettier --write \"src/**/*.{ts,tsx,js,jsx}\"",
+      "test": "jest --verbose --no-cache"
    },
    "dependencies": {
       "@babel/polyfill": "^7.8.7",
@@ -21,23 +22,34 @@
    },
    "devDependencies": {
       "@babel/core": "^7.9.6",
+      "@babel/plugin-proposal-class-properties": "^7.8.3",
       "@babel/preset-env": "^7.9.6",
       "@babel/preset-react": "^7.9.4",
+      "@babel/preset-typescript": "^7.9.0",
       "@hot-loader/react-dom": "^16.13.0",
+      "@types/enzyme": "^3.10.5",
+      "@types/enzyme-adapter-react-16": "^1.0.6",
+      "@types/jest": "^25.2.1",
       "@types/react": "^16.9.34",
       "@types/react-dom": "^16.9.7",
       "@types/react-hot-loader": "^4.1.1",
       "@types/react-redux": "^7.1.8",
       "@types/react-router": "^5.1.7",
+      "@types/redux-mock-store": "^1.0.2",
       "@types/webpack-env": "^1.15.2",
-      "awesome-typescript-loader": "^5.2.1",
+      "babel-jest": "^26.0.1",
       "babel-loader": "^8.1.0",
       "clean-webpack-plugin": "^3.0.0",
       "copy-webpack-plugin": "^5.1.1",
       "css-loader": "^3.5.3",
+      "enzyme": "^3.11.0",
+      "enzyme-adapter-react-16": "^1.15.2",
+      "enzyme-to-json": "^3.4.4",
       "file-loader": "^6.0.0",
       "html-webpack-plugin": "^4.3.0",
       "husky": "^4.2.5",
+      "identity-obj-proxy": "^3.0.0",
+      "jest": "^26.0.1",
       "lint-staged": "^10.2.2",
       "node-sass": "^4.14.1",
       "opn-webpack-plugin": "^1.0.2",
@@ -48,6 +60,7 @@
       "postcss-preset-env": "^6.7.0",
       "prettier": "2.0.5",
       "prettier-plugin-organize-imports": "^1.0.3",
+      "redux-mock-store": "^1.5.4",
       "sass-loader": "^8.0.2",
       "source-map-loader": "^0.2.4",
       "style-loader": "^1.2.1",
@@ -69,5 +82,21 @@
    },
    "lint-staged": {
       "*": "npm run prettier"
+   },
+   "jest": {
+      "setupFiles": [
+         "./src/jest/setupTests.js"
+      ],
+      "snapshotResolver": "./src/jest/snapshotResolver.js",
+      "snapshotSerializers": [
+         "enzyme-to-json/serializer"
+      ],
+      "globals": {
+         "__DEV__": true
+      },
+      "moduleNameMapper": {
+         "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+         "\\.(css|scss|less)$": "identity-obj-proxy"
+      }
    }
 }

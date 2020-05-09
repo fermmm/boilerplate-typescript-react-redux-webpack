@@ -10,7 +10,7 @@ interface SimpleComponentProps {
 export const SimpleComponent: FC<SimpleComponentProps> = () => {
    return (
       <div className={styles.simpleComponent}>
-         Example of a simple component. No Redux, no router props.
+         Example of a simple component. No Redux, no router props, no tests.
       </div>
    );
 };

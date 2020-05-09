@@ -5,27 +5,25 @@ const OpnWebpackPlugin = require('opn-webpack-plugin');
 const devServerPort = 3000;
 
 module.exports = merge(baseConfig, {
-    mode: "development",
+   mode: 'development',
 
-    // source-map configuration
-    devtool: "source-map",
-    devServer: {
-        contentBase: "../dist/",
-        port: devServerPort,
-        host: '0.0.0.0',
-        hot: true,
+   // source-map configuration
+   devtool: 'source-map',
+   devServer: {
+      contentBase: '../dist/',
+      port: devServerPort,
+      host: '0.0.0.0',
+      hot: true,
 
-        // stats
-        stats: {
-            hash: false,
-            version: false,
-            chunks: false,
-            modules: false,
-            children: false,
-            colors: true
-        }
-    },
-    plugins: [
-        new OpnWebpackPlugin({target: 'http://localhost:' + devServerPort, options: {}})
-    ]
+      // stats
+      stats: {
+         hash: false,
+         version: false,
+         chunks: false,
+         modules: false,
+         children: false,
+         colors: true,
+      },
+   },
+   plugins: [new OpnWebpackPlugin({ target: 'http://localhost:' + devServerPort, options: {} })],
 });
