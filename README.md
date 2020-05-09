@@ -20,7 +20,7 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 -  **Prettier:** Configured with pre commit hooks, so prettier fixes files automatically before commit.
 
--  **Webpack**
+-  **Webpack:** Exposed webpack configuration.
 
 -  **CSS Modules:** Already configured but you can combine it with any styling solution you want, like Styles Components.
 
