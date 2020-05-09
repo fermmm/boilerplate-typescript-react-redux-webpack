@@ -2,7 +2,7 @@
 
 This boilerplate comes from an ejected create-react-app with more things added and improved based on the experience of the devs that used it and shared their opinions with me. It's also a fork of btmnk/react-skeleton.
 
-Includes:
+## Included:
 
 -  **Typescript:** Version 3.8
 
