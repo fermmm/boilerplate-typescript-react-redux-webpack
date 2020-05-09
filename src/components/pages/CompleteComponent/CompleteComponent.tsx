@@ -3,7 +3,10 @@ import React, { FC } from 'react';
 import { hot } from 'react-hot-loader';
 import { useDispatch, useSelector } from 'react-redux';
 import { Dispatch } from 'redux';
-import { changeHelloNumber, changeHelloText } from '../../../redux/actions/CompleteComponent/CompleteComponent';
+import {
+   changeHelloNumber,
+   changeHelloText,
+} from '../../../redux/actions/CompleteComponent/CompleteComponent';
 import { Store } from '../../../redux/reducers';
 // @ts-ignore
 import styles from './CompleteComponent.scss';
@@ -16,7 +19,9 @@ export const CompleteComponent: FC<CompleteComponentProps> = ({ history }) => {
    const reduxTextLine: string = useSelector<Store, string>(
       state => state.completeComponentState.reduxTextLine,
    );
-   const reduxNumber: number = useSelector<Store, number>(state => state.completeComponentState.reduxNumber);
+   const reduxNumber: number = useSelector<Store, number>(
+      state => state.completeComponentState.reduxNumber,
+   );
    const dispatch: Dispatch = useDispatch();
 
    React.useEffect(() => {

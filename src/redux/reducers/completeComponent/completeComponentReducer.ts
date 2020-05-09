@@ -10,7 +10,10 @@ const initialState: CompleteComponentStore = {
    reduxNumber: 0,
 };
 
-export const completeComponentReducer: Reducer<CompleteComponentStore> = (state = initialState, action) => {
+export const completeComponentReducer: Reducer<CompleteComponentStore> = (
+   state = initialState,
+   action,
+) => {
    switch (action.type) {
       case CHANGE_HELLO_TEXT:
          return { ...state, reduxTextLine: action.payload as string };
