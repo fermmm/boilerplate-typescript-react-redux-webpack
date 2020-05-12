@@ -26,8 +26,6 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 -  **PostCSS:** With some basic plugins that changes automatically your css/sass code into a more cross browser css
 
--  **Polyfills pack:** To make your code work on Internet Explorer 11, disabled by default. You can enable this on line 1 of src/index.ts
-
 -  **Environment variables (.env) webpack plugin**
 
 -  **HMR:** Fast component reload.
