@@ -83,9 +83,9 @@
    },
    "jest": {
       "setupFiles": [
-         "./src/jest/setupTests.js"
+         "./jest/setupTests.js"
       ],
-      "snapshotResolver": "./src/jest/snapshotResolver.js",
+      "snapshotResolver": "./jest/snapshotResolver.js",
       "snapshotSerializers": [
          "enzyme-to-json/serializer"
       ],
@@ -93,7 +93,7 @@
          "__DEV__": true
       },
       "moduleNameMapper": {
-         "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "<rootDir>/__mocks__/fileMock.js",
+         "\\.(jpg|jpeg|png|gif|eot|otf|webp|svg|ttf|woff|woff2|mp4|webm|wav|mp3|m4a|aac|oga)$": "./jest/fileMock.js",
          "\\.(css|scss|less)$": "identity-obj-proxy"
       }
    }
