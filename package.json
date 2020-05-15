@@ -2,7 +2,7 @@
    "name": "project-name",
    "version": "1.0.0",
    "description": "Project description",
-   "author": "Fernando Medinaa",
+   "author": "Fernando Medina",
    "scripts": {
       "start": "NODE_ENV=development webpack-dev-server --config ./webpack/dev.js",
       "build": "NODE_ENV=production webpack --progress --config ./webpack/prod.js",
