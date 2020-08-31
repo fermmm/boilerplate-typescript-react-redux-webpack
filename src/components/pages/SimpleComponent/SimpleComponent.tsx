@@ -8,9 +8,7 @@ interface SimpleComponentProps {
 }
 
 export const SimpleComponent: FC<SimpleComponentProps> = () => {
-   return (
-      <div className={styles.simpleComponent}>Example of the most simple component possible.</div>
-   );
+   return <div className={styles.simpleComponent}>Example of the most simple component possible.</div>;
 };
 
 export default hot(module)(SimpleComponent);
