@@ -49,7 +49,7 @@ export default function configureStore(): Store {
    // Base store configuration
    return createStore(
       combineReducers({ ...rootReducer, router: connectRouter(history) }),
-      compose(...storeEnhancers),
+      compose(...storeEnhancers)
    );
 }
 

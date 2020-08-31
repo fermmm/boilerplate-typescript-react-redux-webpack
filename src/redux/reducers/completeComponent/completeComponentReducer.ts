@@ -12,7 +12,7 @@ const initialState: CompleteComponentStore = {
 
 export const completeComponentReducer: Reducer<CompleteComponentStore> = (
    state = initialState,
-   action,
+   action
 ) => {
    switch (action.type) {
       case CHANGE_HELLO_TEXT:

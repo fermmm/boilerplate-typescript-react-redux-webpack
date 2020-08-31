@@ -18,9 +18,7 @@ jest.spyOn(redux, 'useDispatch').mockImplementation(() => store.dispatch);
 
 describe('<CompleteComponent />', () => {
    test('Renders correctly', () => {
-      const component: ShallowWrapper = shallow(
-         <CompleteComponent history={createBrowserHistory()} />,
-      );
+      const component: ShallowWrapper = shallow(<CompleteComponent history={createBrowserHistory()} />);
       expect(component).toMatchSnapshot();
    });
 });
