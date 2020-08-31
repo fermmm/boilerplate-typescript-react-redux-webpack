@@ -1,0 +1,8 @@
+# Ignore everything:
+**/*.*
+
+# Except ts and js files:
+!*.js
+!*.jsx
+!*.ts
+!*.tsx
