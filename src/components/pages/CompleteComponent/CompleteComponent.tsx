@@ -14,7 +14,6 @@ export const CompleteComponent: FC<CompleteComponentProps> = () => {
 
    return (
       <div className={styles.completeComponent}>
-         {/* Show the redux data. */}
          It's working. <br />
          <br />
          <button onClick={() => history.push('/simple/')}>Show a more simple component.</button>
