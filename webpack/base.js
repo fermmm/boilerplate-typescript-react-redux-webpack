@@ -84,18 +84,10 @@ module.exports = {
             },
          },
          {
-            test: /\.(eot|ttf|otf|woff|woff2|json|xml)$/,
+            test: /\.(eot|ttf|otf|woff|woff2)$/,
             loader: 'file-loader',
             query: {
                outputPath: './fonts/',
-               name: '[path][name].[ext]?[hash]',
-            },
-         },
-         {
-            test: /\.(json|xml)$/,
-            loader: 'file-loader',
-            query: {
-               outputPath: './data/',
                name: '[path][name].[ext]?[hash]',
             },
          },
