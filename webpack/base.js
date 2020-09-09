@@ -55,6 +55,7 @@ module.exports = {
             test: /\.js$/,
             use: ['source-map-loader'],
             enforce: 'pre',
+            exclude: [path.join(process.cwd(), 'node_modules')],
          },
          // Markup loader
          {

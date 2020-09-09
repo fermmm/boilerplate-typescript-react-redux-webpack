@@ -4,13 +4,13 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 ## Included:
 
--  **Typescript:** Version 3.8
+-  **Typescript:** Version 4.0.2
 
 -  **React:** 16.13 (hooks supported)
 
--  **Redux:** It's optional, use no-redux branch if you want to avoid Redux
+-  **Redux:** It's optional, use the no-redux branch if you want to avoid Redux
 
--  **Jest + Enzyme:** Installed in case you are going to use tests
+-  **Jest + Enzyme:** Installed
 
 -  **connected-react-router:** Supports navigation with Redux
 
@@ -22,17 +22,21 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 -  **Webpack:** Exposed webpack configuration.
 
--  **CSS Modules:** Already configured but you can combine it with any styling solution you want, like Styles Components.
+-  **Styled Components:** Installed and implemented an example theme for the project.
+
+-  **CSS Modules:** Already configured in case you prefer this option instead of Styled Components.
 
 -  **PostCSS:** With some basic plugins that changes automatically your css/sass code into a more cross browser css
 
 -  **Environment variables (.env) webpack plugin**
 
+-  **Axios:** Axios installed with an example http request function implemented using React hooks.
+
 -  **HMR:** Fast component reload.
 
 ## Installation
 
-1. Run: `npm install`. On Windows you must also run: `npm install -g win-node-env`. That is all.
+1. Run: `npm install`. On MS-Windows you must also run: `npm install -g win-node-env`. That is all.
 2. **Optional** but highly recomended: Install TSLint and Prettier extensions for VSCode or for your prefered text editor.
 3. **Optional**: This project is compatible with the chrome extension: "Redux DevTools", you can install it too.
 
