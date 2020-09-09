@@ -1,4 +1,4 @@
-import { shallow, ShallowWrapper } from 'enzyme';
+import { CommonWrapper, mount } from 'enzyme';
 import { createBrowserHistory } from 'history';
 import React from 'react';
 import * as redux from 'react-redux';
@@ -18,7 +18,7 @@ jest.spyOn(redux, 'useDispatch').mockImplementation(() => store.dispatch);
 
 describe('<CompleteComponent />', () => {
    test('Renders correctly', () => {
-      const component: ShallowWrapper = shallow(<CompleteComponent history={createBrowserHistory()} />);
+      const component: CommonWrapper = mount(<CompleteComponent history={createBrowserHistory()} />);
       expect(component).toMatchSnapshot();
    });
 });
