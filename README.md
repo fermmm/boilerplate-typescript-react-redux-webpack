@@ -12,8 +12,6 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 -  **Jest + Enzyme:** Installed and some example basic tests are included
 
--  **connected-react-router:** Supports navigation with Redux
-
 -  **TSLint:** With rules coded by me and a configuration that bans "object", "any" and other practices that js devs use when they don't fully understand what is the idea of using a static typed language
 
 -  **TSLint errors:** Are also displayed in the browser's console as warnings to give them more visibility
