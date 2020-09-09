@@ -1,6 +1,10 @@
 # Starting template (boilerplate) for a front end Typescript + React project
 
-This boilerplate comes from an ejected create-react-app with more things added and improved based on the experience of the devs that used it and shared their opinions with me. It's also a fork of btmnk/react-skeleton
+This is a lite alternative to create-react-app, it has less fancy features but it's easy to maintain and update. 
+
+create-react-app takes a lot of time to modify or troubleshoot webpack and update it's many modules. 
+
+If you are in a team with many devs in a big frontend it's better to use create-rect-app since it contains many optimizations and you have the resources required to modify and extend it.  
 
 ## Included:
 
