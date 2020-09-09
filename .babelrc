@@ -5,7 +5,8 @@
          "@babel/preset-typescript",
          {
             "isTSX": true,
-            "allExtensions": true
+            "allExtensions": true,
+            "onlyRemoveTypeImports": true 
          }
       ],
       [
@@ -19,5 +20,9 @@
          }
       ]
    ],
-   "plugins": ["@babel/plugin-proposal-class-properties", "@babel/transform-runtime"]
+   "plugins": [
+      "@babel/plugin-proposal-class-properties", 
+      "@babel/transform-runtime", 
+      "babel-plugin-styled-components"
+   ]
 }

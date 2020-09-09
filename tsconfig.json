@@ -10,7 +10,7 @@
       "allowSyntheticDefaultImports": true,
       "skipLibCheck": true,
       "suppressImplicitAnyIndexErrors": true,
-      "lib": ["es5", "es6", "dom"],
+      "lib": ["es5", "es6", "dom", "es2019"],
       "noEmit": true
    },
    "include": ["./src/**/*"]

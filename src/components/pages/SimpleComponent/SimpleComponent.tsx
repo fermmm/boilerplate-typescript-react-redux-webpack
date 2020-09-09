@@ -1,14 +1,18 @@
 import React, { FC } from 'react';
 import { hot } from 'react-hot-loader';
-// @ts-ignore
-import styles from './SimpleComponent.scss';
+import { SimpleComponentContainer } from './styles.SimpleComponent';
 
 interface SimpleComponentProps {
-   // ... Your props here ...
+   // ... Props types here ...
 }
 
 export const SimpleComponent: FC<SimpleComponentProps> = () => {
-   return <div className={styles.simpleComponent}>Example of the most simple component possible.</div>;
+   return (
+      <SimpleComponentContainer>
+         Example of a simple component. No Redux, no router props. <br />
+         Styled using Styled Components.
+      </SimpleComponentContainer>
+   );
 };
 
 export default hot(module)(SimpleComponent);
