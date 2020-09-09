@@ -6,6 +6,8 @@ create-react-app takes a lot of time to modify or troubleshoot webpack and updat
 
 If you are in a team with many devs in a big frontend it's better to use create-rect-app since it contains many optimizations and you have the resources required to modify and extend it.  
 
+If you are in a small team you can use create-react-app without ejecting and without doing any modifications, that is a good option, but in case you need many modifications in the webpack configuration a boilerplate like this one may be the best bet.
+
 ## Included:
 
 -  **Typescript:** Version 4.0.2
