@@ -43,11 +43,11 @@ export async function httpRequest<T>(options: AxiosRequestConfig): Promise<HttpR
  *
  * const [{ data, isLoading, isError, errorMessage }, sendRequest] = useHttpRequest();
  *
- * doFetch(`http://api-site.com/api/query=${query}`)
+ * sendRequest({url: `http://api-site.com/api/query=${query}`})
  */
 export const useHttpRequest = <T>() => {
    const [data, setData] = useState<T>();
-   const [url, setUrl] = useState<string>();
+   const [axiosRequestConfig, setAxiosRequestConfig] = useState<AxiosRequestConfig>();
    const [isLoading, setIsLoading] = useState(false);
    const [isError, setIsError] = useState(false);
    const [errorMessage, setErrorMessage] = useState<string>();
@@ -58,7 +58,7 @@ export const useHttpRequest = <T>() => {
          setIsError(false);
          setIsLoading(true);
 
-         const result = await httpRequest<T>({ url });
+         const result = await httpRequest<T>(axiosRequestConfig);
          if (!mounted) {
             return;
          }
@@ -75,11 +75,11 @@ export const useHttpRequest = <T>() => {
 
       fetchData();
       return () => (mounted = false);
-   }, [url]);
+   }, [axiosRequestConfig]);
 
-   return [{ data, isLoading, isError, errorMessage }, setUrl] as [
+   return [{ data, isLoading, isError, errorMessage }, setAxiosRequestConfig] as [
       requestResponse: UseHttpRequestResponse<T>,
-      sendRequest: React.Dispatch<React.SetStateAction<string>>
+      sendRequest: React.Dispatch<React.SetStateAction<AxiosRequestConfig>>
    ];
 };
 
