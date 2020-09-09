@@ -10,7 +10,7 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 -  **Redux:** It's optional, use the no-redux branch if you want to avoid Redux
 
--  **Jest + Enzyme:** Installed
+-  **Jest + Enzyme:** Installed and some example basic tests are included.
 
 -  **connected-react-router:** Supports navigation with Redux
 
