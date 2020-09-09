@@ -1,6 +1,6 @@
 # Starting template (boilerplate) for a front end Typescript + React project
 
-This is a lite alternative to create-react-app, it has less fancy features but it's easy to maintain and update. 
+This is a lite alternative to create-react-app, it has less fancy features but it's easy to modify, maintain and update. 
 
 create-react-app takes a lot of time to modify or troubleshoot webpack and update it's many modules. 
 
