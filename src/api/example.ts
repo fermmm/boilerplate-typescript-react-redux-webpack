@@ -6,7 +6,7 @@ import { useHttpRequest, UseHttpRequestResponse } from './tools/httpRequest';
  */
 export const useExampleApiRequest = (): StarWarsFilmsResponse => {
    const [requestResponse, sendRequest] = useHttpRequest<StarWarsApiResult>();
-   return [requestResponse, () => sendRequest(`https://swapi.dev/api/films/`)];
+   return [requestResponse, () => sendRequest({ url: `https://swapi.dev/api/films/`, method: 'GET' })];
 };
 
 export type StarWarsFilmsResponse = [
