@@ -31,11 +31,11 @@ export const CompleteComponent: FC<CompleteComponentProps> = () => {
          Star Wars open API:
          <br />
          <br />
-         {requestResponse.isLoading
-            ? 'Making a request to an example URL...'
-            : requestResponse.isError
-            ? requestResponse.errorMessage
-            : requestResponse.data?.results.map(r => <div key={r.episode_id}>{r.title}</div>)}
+         {requestResponse.isLoading && 'Making a request to an example URL...'}
+         {requestResponse.isError && requestResponse.errorMessage}
+         {requestResponse.data?.results?.map(r => (
+            <div key={r.episode_id}>{r.title}</div>
+         ))}
       </div>
    );
 };
