@@ -8,8 +8,6 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 -  **React:** 16.13 (hooks supported)
 
--  **Redux:** It's optional, use the no-redux branch if you want to avoid Redux
-
 -  **Jest + Enzyme:** Installed and some example basic tests are included
 
 -  **TSLint:** With rules coded by me and a configuration that bans "object", "any" and other practices that js devs use when they don't fully understand what is the idea of using a static typed language
@@ -36,7 +34,6 @@ This boilerplate comes from an ejected create-react-app with more things added a
 
 1. Run: `npm install`. On MS-Windows you must also run: `npm install -g win-node-env`. That is all
 2. **Optional** but highly recomended: Install TSLint and Prettier extensions for VSCode or for your prefered text editor
-3. **Optional**: This project is compatible with the chrome extension: "Redux DevTools", you can install it too
 
 ---
 
