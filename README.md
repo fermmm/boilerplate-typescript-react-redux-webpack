@@ -2,7 +2,7 @@
 
 This was made ejecting a create-react-app project and adding many cool features to it. The downside is that the ejecting was made a couple of years ago, so it lacks some features that a more recent create-reacrt-app has. There is a positive side about this boilerplate: it's much more simple to update, extend and troubleshoot since create-react-app in the last couple of years became more and more complex, Facebook takes a lot of time to make updates on create-react-app dependencies, even the ones that should be safe to update like the Typescript version because the complexity and many versions of thier boilerplate.
 
-So this boilerplate has less recent features but is much more simple and the modules are more updated or easy to update by calling a couple of npm install [...]@latest, it's ideal for quick prototyping and trying new versions of libraries.
+So by calling a couple of npm install [...]@latest you can update anything, instead of waiting Facebook to update it. It's ideal for quick prototyping and trying new versions of libraries.
 For a serious project I recommend create-react-app, Next-js or Razzle.
 
 ## Included in this boilerplate:
