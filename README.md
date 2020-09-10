@@ -1,14 +1,11 @@
 # Starting template (boilerplate) for a front end Typescript + React project
 
-This is a lite alternative to create-react-app, it has less fancy features but it's easy to modify, maintain and update. 
+This was made ejecting a create-react-app project and adding many cool features to it. The downside is that the ejecting was made a couple of years ago, so it lacks some features that a more recent create-reacrt-app has. There is a positive side about this boilerplate: it's much more simple to update, extend and troubleshoot since create-react-app in the last couple of years became more and more complex, Facebook takes a lot of time to make updates on create-react-app dependencies, even the ones that should be safe to update like the Typescript version because the complexity and many versions of thier boilerplate.
 
-create-react-app takes a lot of time to modify or troubleshoot webpack and update it's many modules. 
+So this boilerplate has less recent features but some modules are more updated, it's ideal for quick prototyping and trying new versions of libraries.
+For a serious project I recommend create-react-app, Next-js or Razzle.
 
-If you are in a team with many devs in a big frontend it's better to use create-rect-app since it contains many optimizations and you have the resources required to modify and extend it.  
-
-If you are in a small team you can use create-react-app without ejecting and without doing any modifications, that is a good option, but in case you need many modifications in the webpack configuration a boilerplate like this one may be the best bet.
-
-## Included:
+## Included in this boilerplate:
 
 -  **Typescript:** Version 4.0.2
 
